@@ -1,0 +1,24 @@
+Flitto.playground
+*.xcuserstate
+.DS_Store
+.idea
+
+pod Flitto.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Pods/
+bin/periphery
+build/
+docs/
+houston/
+xcuserdata/
+
+#fastlane
+Fastlane/Flitto.app.dSYM.zip
+Fastlane/Flitto.ipa
+Fastlane/test_output/
+Fastlane/Pluginfile
+Fastlane/report.xml
+
+#Carthage
+Carthage/
+Carthage/Checkouts
+Carthage/Build
