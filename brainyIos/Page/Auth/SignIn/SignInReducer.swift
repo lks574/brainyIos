@@ -3,6 +3,7 @@ import SwiftUI
 
 @Reducer
 struct SignInReducer {
+  @Dependency(\.swiftDataClient) var swiftDataClient
 
   @ObservableState
   struct State: Equatable {
