@@ -1,10 +1,13 @@
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct brainyIosApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      SignInPage(store: .init(initialState: .init(), reducer: {
+        SignInReducer()
+      }))
     }
   }
 }
