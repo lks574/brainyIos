@@ -16,7 +16,7 @@ struct brainyIosApp: App {
   var body: some Scene {
     WindowGroup {
       AppView(store: Store(initialState: AppFeature.State()) {
-        AppFeature()._printChanges()
+        AppFeature()
       })
       .onAppear {
         setupNavigationDependency()
@@ -28,6 +28,9 @@ struct brainyIosApp: App {
     NavigationClient.liveValue = NavigationClient(
       goToQuizModeSelection: { [store] in
         await store.send(.goToQuizModeSelection)
+      },
+      goToCategorySelection: { [store] quizMode, quizType in
+        await store.send(.goToCategorySelection(quizMode, quizType))
       }
     )
   }

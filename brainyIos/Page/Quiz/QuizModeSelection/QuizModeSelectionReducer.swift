@@ -4,6 +4,8 @@ import SwiftUI
 @Reducer
 struct QuizModeSelectionReducer {
 
+  @Dependency(\.navigation) var navigation
+
   @ObservableState
   struct State: Equatable {
     var selectedQuizType: QuizType?
@@ -12,6 +14,7 @@ struct QuizModeSelectionReducer {
   enum Action: BindableAction, Sendable {
     case binding(BindingAction<State>)
     case changeQuizType(QuizType)
+    case goToCategory(QuizMode, QuizType)
   }
 
   var body: some Reducer<State, Action> {
@@ -25,6 +28,11 @@ struct QuizModeSelectionReducer {
       case .changeQuizType(let quizType):
         state.selectedQuizType = quizType
         return .none
+
+      case let .goToCategory(quizMode, quizType):
+        return .run { _ in
+          await navigation.goToCategorySelection(quizMode, quizType)
+        }
       }
     }
   }

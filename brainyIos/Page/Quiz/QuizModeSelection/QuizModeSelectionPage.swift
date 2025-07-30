@@ -3,8 +3,8 @@ import SwiftUI
 
 /// 퀴즈 모드 선택 화면
 struct QuizModeSelectionPage: View {
-//  @ObservedObject var coordinator: AppCoordinator
   @Bindable var store: StoreOf<QuizModeSelectionReducer>
+  
   var body: some View {
     VStack(spacing: 32) {
       // 헤더
@@ -54,7 +54,7 @@ struct QuizModeSelectionPage: View {
         isSelected: store.selectedQuizType == .shortAnswer
       ) {
         store.send(.changeQuizType(.shortAnswer))
-//        coordinator.navigateToCategorySelection(quizMode: .individual, quizType: .shortAnswer)
+        store.send(.goToCategory(.individual, .shortAnswer))
       }
 
       // 객관식 퀴즈
@@ -66,7 +66,7 @@ struct QuizModeSelectionPage: View {
         isSelected: store.selectedQuizType == .multipleChoice
       ) {
         store.send(.changeQuizType(.multipleChoice))
-//        coordinator.navigateToCategorySelection(quizMode: .individual, quizType: .multipleChoice)
+        store.send(.goToCategory(.individual, .multipleChoice))
       }
 
       // 음성모드 퀴즈 (미구현)

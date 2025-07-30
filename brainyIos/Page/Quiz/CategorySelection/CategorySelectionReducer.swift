@@ -19,6 +19,7 @@ struct CategorySelectionReducer {
   enum Action: BindableAction, Sendable {
     case binding(BindingAction<State>)
     case goToBack
+    case goToQuizPlay
     case changePlayMode(QuizMode)
     case changeFilter(QuestionFilter)
     case changeCategory(QuizCategory)
@@ -33,6 +34,9 @@ struct CategorySelectionReducer {
         return .none
 
       case .goToBack:
+        return .none
+
+      case .goToQuizPlay:
         return .none
 
       case .changePlayMode(let quizMode):

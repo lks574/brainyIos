@@ -15,6 +15,7 @@ struct AppFeature {
   enum Action {
     case path(StackAction<Path.State, Path.Action>)
     case goToQuizModeSelection
+    case goToCategorySelection(QuizMode, QuizType)
     case root(SignInReducer.Action)
   }
 
@@ -22,6 +23,7 @@ struct AppFeature {
   enum Path {
     case signIn(SignInReducer)
     case quizModeSelection(QuizModeSelectionReducer)
+    case categorySelection(CategorySelectionReducer)
   }
 
   var body: some ReducerOf<Self> {
@@ -29,6 +31,10 @@ struct AppFeature {
       switch action {
       case .goToQuizModeSelection:
         state.path.append(.quizModeSelection(QuizModeSelectionReducer.State()))
+        return .none
+
+      case let .goToCategorySelection(quizMode, quizType):
+        state.path.append(.categorySelection(CategorySelectionReducer.State(quizMode: quizMode, quizType: quizType)))
         return .none
 
       case .root(.goToQuizModeSelection):

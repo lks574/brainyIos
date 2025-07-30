@@ -5,8 +5,30 @@ struct CategorySelectionPage: View {
   @Bindable var store: StoreOf<CategorySelectionReducer>
 
   var body: some View {
+    VStack(spacing: 24) {
+      // 헤더
+      headerSection
 
-    // TODO: View 마무리
+      ScrollView {
+        VStack(spacing: 20) {
+          // 플레이 모드 선택 (스테이지 vs 개별)
+          playModeSection
+
+          // 문제 필터 선택 (전체 무작위 vs 풀었던 것 제외)
+          questionFilterSection
+
+          // 카테고리 선택
+          categorySection
+        }
+        .padding(.horizontal, 24)
+      }
+
+      // 하단 버튼
+      bottomSection
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(Color.brainyBackground)
+    .navigationBarHidden(true)
   }
 }
 
@@ -118,6 +140,8 @@ extension CategorySelectionPage {
       ) {
         if let category = store.selectedCategory {
           // TODO: 라우팅
+          store.send(.goToQuizPlay)
+          //          coordinator.navigateToQuizPlay(category: category, mode: selectedPlayMode, type: quizType)
         }
       }
 
