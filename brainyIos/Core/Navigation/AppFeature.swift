@@ -16,6 +16,7 @@ struct AppFeature {
     case path(StackAction<Path.State, Path.Action>)
     case goToQuizModeSelection
     case goToCategorySelection(QuizMode, QuizType)
+    case goToBack
     case root(SignInReducer.Action)
   }
 
@@ -35,6 +36,12 @@ struct AppFeature {
 
       case let .goToCategorySelection(quizMode, quizType):
         state.path.append(.categorySelection(CategorySelectionReducer.State(quizMode: quizMode, quizType: quizType)))
+        return .none
+
+      case .goToBack:
+        if !state.path.isEmpty {
+          state.path.removeLast()
+        }
         return .none
 
       case .root(.goToQuizModeSelection):

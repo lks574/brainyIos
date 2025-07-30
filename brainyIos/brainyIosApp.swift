@@ -15,12 +15,10 @@ struct brainyIosApp: App {
 
   var body: some Scene {
     WindowGroup {
-      AppView(store: Store(initialState: AppFeature.State()) {
-        AppFeature()
-      })
-      .onAppear {
-        setupNavigationDependency()
-      }
+      AppView(store: store)
+        .onAppear {
+          setupNavigationDependency()
+        }
     }
   }
 
@@ -31,6 +29,9 @@ struct brainyIosApp: App {
       },
       goToCategorySelection: { [store] quizMode, quizType in
         await store.send(.goToCategorySelection(quizMode, quizType))
+      },
+      goToBack: { [store] in
+        await store.send(.goToBack)
       }
     )
   }

@@ -34,7 +34,9 @@ struct CategorySelectionReducer {
         return .none
 
       case .goToBack:
-        return .none
+        return .run { _ in
+          await navigation.goToBack()
+        }
 
       case .goToQuizPlay:
         return .none
