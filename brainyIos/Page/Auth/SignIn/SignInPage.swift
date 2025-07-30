@@ -155,7 +155,7 @@ extension SignInPage {
 
       // Google 로그인 버튼
       Button(action: {
-        store.send(.signInWithGoogle)
+        store.send(.goToQuizModeSelection)
       }) {
         HStack {
           Image(systemName: "globe")

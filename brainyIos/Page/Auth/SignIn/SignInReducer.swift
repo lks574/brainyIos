@@ -4,6 +4,7 @@ import SwiftUI
 @Reducer
 struct SignInReducer {
   @Dependency(\.swiftDataClient) var swiftDataClient
+  @Dependency(\.navigation) var navigation
 
   @ObservableState
   struct State: Equatable {
@@ -31,6 +32,7 @@ struct SignInReducer {
     case signInWithEmail
     case signInWithApple
     case signInWithGoogle
+    case goToQuizModeSelection
     case clearError
   }
 
@@ -53,6 +55,9 @@ struct SignInReducer {
         return .none
 
       case .signInWithGoogle:
+        return .none
+
+      case .goToQuizModeSelection:
         return .none
 
       case .clearError:

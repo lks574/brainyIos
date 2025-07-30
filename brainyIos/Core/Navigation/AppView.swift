@@ -7,7 +7,7 @@ struct AppView: View {
 
   var body: some View {
     NavigationStack(
-      path: $store.scope(state: \.path, action: \.Path),
+      path: $store.scope(state: \.path, action: \.path),
       root: { SignInPage(store: store.scope(state: \.rootState, action: \.root)) },
     destination: { store in
       switch store.case {

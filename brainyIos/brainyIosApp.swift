@@ -4,15 +4,32 @@ import ComposableArchitecture
 @main
 struct brainyIosApp: App {
 
-  static let store = Store(initialState: AppFeature.State()) {
-    AppFeature()._printChanges()
+  @State private var store: StoreOf<AppFeature>
+
+  init() {
+    let store = Store(initialState: AppFeature.State()) {
+      AppFeature()
+    }
+    self._store = State(initialValue: store)
   }
 
   var body: some Scene {
     WindowGroup {
-      SignInPage(store: .init(initialState: .init(), reducer: {
-        SignInReducer()
-      }))
+      AppView(store: Store(initialState: AppFeature.State()) {
+        AppFeature()._printChanges()
+      })
+      .onAppear {
+        setupNavigationDependency()
+      }
     }
   }
+
+  private func setupNavigationDependency() {
+    NavigationClient.liveValue = NavigationClient(
+      goToQuizModeSelection: { [store] in
+        await store.send(.goToQuizModeSelection)
+      }
+    )
+  }
 }
+
