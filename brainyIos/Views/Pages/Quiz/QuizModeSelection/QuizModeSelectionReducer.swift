@@ -16,6 +16,7 @@ struct QuizModeSelectionReducer {
     case changeQuizType(QuizType)
     case goToCategory(QuizMode, QuizType)
     case goToProfile
+    case goToHistoryList
   }
 
   var body: some Reducer<State, Action> {
@@ -39,8 +40,13 @@ struct QuizModeSelectionReducer {
         return .run { _ in
           await navigation.goToProfile()
         }
-      }
 
+      case .goToHistoryList:
+        return .run { _ in
+          await navigation.goToHistoryList()
+        }
+
+      }
     }
   }
 }

@@ -100,7 +100,7 @@ struct QuizModeSelectionPage: View {
     HStack(spacing: 16) {
       // 히스토리 버튼
       Button(action: {
-//        coordinator.navigateToHistory()
+        store.send(.goToHistoryList)
       }) {
         HStack {
           Image(systemName: "clock.arrow.circlepath")

@@ -6,10 +6,6 @@ struct SignInPage: View {
   @Bindable var store: StoreOf<SignInReducer>
   @Environment(\.dismiss) private var dismiss
 
-  init(store: StoreOf<SignInReducer>) {
-    self.store = store
-  }
-
   var body: some View {
     NavigationView {
       ScrollView {

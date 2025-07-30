@@ -19,6 +19,8 @@ struct AppView: View {
         CategorySelectionPage(store: store)
       case .profile(let store):
         ProfilePage(store: store)
+      case .historyList(let store):
+        HistoryListPage(store: store)
       }
     })
   }

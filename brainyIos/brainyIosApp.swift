@@ -33,6 +33,9 @@ struct brainyIosApp: App {
       goToProfile: { [store] in
         await store.send(.goToProfile)
       },
+      goToHistoryList: { [store] in
+        await store.send(.goToHistoryList)
+      },
       goToBack: { [store] in
         await store.send(.goToBack)
       }
