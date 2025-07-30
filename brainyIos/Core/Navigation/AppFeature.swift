@@ -17,6 +17,7 @@ struct AppFeature {
     case goToQuizModeSelection
     case goToCategorySelection(QuizMode, QuizType)
     case goToBack
+    case goToProfile
     case root(SignInReducer.Action)
   }
 
@@ -25,6 +26,7 @@ struct AppFeature {
     case signIn(SignInReducer)
     case quizModeSelection(QuizModeSelectionReducer)
     case categorySelection(CategorySelectionReducer)
+    case profile(ProfileReducer)
   }
 
   var body: some ReducerOf<Self> {
@@ -42,6 +44,10 @@ struct AppFeature {
         if !state.path.isEmpty {
           state.path.removeLast()
         }
+        return .none
+
+      case .goToProfile:
+        state.path.append(.profile(ProfileReducer.State()))
         return .none
 
       case .root(.goToQuizModeSelection):

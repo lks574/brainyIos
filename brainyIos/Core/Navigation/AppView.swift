@@ -17,6 +17,8 @@ struct AppView: View {
         QuizModeSelectionPage(store: store)
       case .categorySelection(let store):
         CategorySelectionPage(store: store)
+      case .profile(let store):
+        ProfilePage(store: store)
       }
     })
   }

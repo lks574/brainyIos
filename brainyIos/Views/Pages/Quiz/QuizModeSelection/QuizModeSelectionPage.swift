@@ -120,7 +120,7 @@ struct QuizModeSelectionPage: View {
 
       // 프로필 버튼
       Button(action: {
-//        coordinator.navigateToProfile()
+        store.send(.goToProfile)
       }) {
         HStack {
           Image(systemName: "person.circle")
