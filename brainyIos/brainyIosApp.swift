@@ -19,6 +19,10 @@ struct brainyIosApp: App {
         .onAppear {
           setupNavigationDependency()
         }
+        .task {
+          await AppInitializer().initializeApp()
+          print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!)
+        }
     }
   }
 

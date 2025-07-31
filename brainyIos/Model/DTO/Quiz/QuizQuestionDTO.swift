@@ -39,8 +39,10 @@ extension QuizQuestionDTO {
     audioURL: nil,
     isCompleted: false
   )
-  
-  static let mockList: [QuizQuestionDTO] = [
+}
+
+extension [QuizQuestionDTO] {
+  static let mockList = [
     QuizQuestionDTO(
       id: "question-1",
       question: "대한민국의 수도는 어디인가요?",

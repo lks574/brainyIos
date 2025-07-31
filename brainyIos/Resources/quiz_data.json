@@ -1,0 +1,204 @@
+{
+  "questions": [
+    {
+      "id": "q001",
+      "question": "대한민국의 수도는 어디인가요?",
+      "correctAnswer": "서울",
+      "options": ["서울", "부산", "대구", "인천"],
+      "category": "general",
+      "difficulty": "easy",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q002",
+      "question": "세종대왕이 창제한 문자는 무엇인가요?",
+      "correctAnswer": "한글",
+      "options": null,
+      "category": "person",
+      "difficulty": "easy",
+      "type": "shortAnswer",
+      "audioURL": null
+    },
+    {
+      "id": "q003",
+      "question": "BTS의 리더는 누구인가요?",
+      "correctAnswer": "RM",
+      "options": ["RM", "진", "슈가", "제이홉"],
+      "category": "music",
+      "difficulty": "easy",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q004",
+      "question": "한국의 전통 음식 중 발효 채소 요리는?",
+      "correctAnswer": "김치",
+      "options": ["김치", "불고기", "비빔밥", "냉면"],
+      "category": "food",
+      "difficulty": "easy",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q005",
+      "question": "태극기의 중앙에 있는 원형 문양의 이름은?",
+      "correctAnswer": "태극",
+      "options": ["태극", "팔괘", "음양", "오행"],
+      "category": "general",
+      "difficulty": "medium",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q006",
+      "question": "조선시대 최고의 교육기관은?",
+      "correctAnswer": "성균관",
+      "options": null,
+      "category": "history",
+      "difficulty": "medium",
+      "type": "shortAnswer",
+      "audioURL": null
+    },
+    {
+      "id": "q007",
+      "question": "한국의 전통 악기 중 현악기는?",
+      "correctAnswer": "가야금",
+      "options": ["가야금", "장구", "꽹과리", "북"],
+      "category": "music",
+      "difficulty": "medium",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q008",
+      "question": "한국 전쟁이 일어난 연도는?",
+      "correctAnswer": "1950년",
+      "options": ["1948년", "1950년", "1953년", "1945년"],
+      "category": "history",
+      "difficulty": "medium",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q009",
+      "question": "한국의 대표적인 스포츠 선수 박세리가 활약한 종목은?",
+      "correctAnswer": "골프",
+      "options": ["골프", "테니스", "배드민턴", "탁구"],
+      "category": "sports",
+      "difficulty": "easy",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q010",
+      "question": "한국의 전통 주거 형태는?",
+      "correctAnswer": "한옥",
+      "options": null,
+      "category": "general",
+      "difficulty": "easy",
+      "type": "shortAnswer",
+      "audioURL": null
+    },
+    {
+      "id": "q011",
+      "question": "한국 영화 '기생충'의 감독은?",
+      "correctAnswer": "봉준호",
+      "options": ["봉준호", "박찬욱", "김기덕", "이창동"],
+      "category": "movie",
+      "difficulty": "medium",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q012",
+      "question": "한국의 전통 차 중 보리로 만든 차는?",
+      "correctAnswer": "보리차",
+      "options": ["보리차", "녹차", "홍차", "우롱차"],
+      "category": "food",
+      "difficulty": "easy",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q013",
+      "question": "조선 왕조의 창건자는?",
+      "correctAnswer": "이성계",
+      "options": null,
+      "category": "person",
+      "difficulty": "hard",
+      "type": "shortAnswer",
+      "audioURL": null
+    },
+    {
+      "id": "q014",
+      "question": "한국의 전통 놀이 중 윷을 사용하는 놀이는?",
+      "correctAnswer": "윷놀이",
+      "options": ["윷놀이", "제기차기", "팽이치기", "연날리기"],
+      "category": "general",
+      "difficulty": "easy",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q015",
+      "question": "한국의 대표적인 IT 기업은?",
+      "correctAnswer": "삼성",
+      "options": ["삼성", "LG", "SK", "현대"],
+      "category": "general",
+      "difficulty": "easy",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q016",
+      "question": "한국의 전통 의상은?",
+      "correctAnswer": "한복",
+      "options": null,
+      "category": "general",
+      "difficulty": "easy",
+      "type": "shortAnswer",
+      "audioURL": null
+    },
+    {
+      "id": "q017",
+      "question": "한국 드라마 '오징어 게임'이 인기를 끈 플랫폼은?",
+      "correctAnswer": "넷플릭스",
+      "options": ["넷플릭스", "유튜브", "디즈니플러스", "아마존프라임"],
+      "category": "movie",
+      "difficulty": "easy",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q018",
+      "question": "한국의 전통 무예는?",
+      "correctAnswer": "태권도",
+      "options": ["태권도", "가라테", "유도", "검도"],
+      "category": "sports",
+      "difficulty": "easy",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q019",
+      "question": "한국의 최고봉은?",
+      "correctAnswer": "백두산",
+      "options": ["백두산", "한라산", "지리산", "설악산"],
+      "category": "general",
+      "difficulty": "medium",
+      "type": "multipleChoice",
+      "audioURL": null
+    },
+    {
+      "id": "q020",
+      "question": "한국 전통 음악의 대표적인 장르는?",
+      "correctAnswer": "판소리",
+      "options": null,
+      "category": "music",
+      "difficulty": "hard",
+      "type": "shortAnswer",
+      "audioURL": null
+    }
+  ]
+}
