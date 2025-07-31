@@ -3,7 +3,7 @@ import SwiftUI
 
 @Reducer
 struct SignInReducer {
-  @Dependency(\.swiftDataClient) var swiftDataClient
+  @Dependency(\.userClient) var userClient
   @Dependency(\.navigation) var navigation
 
   @ObservableState

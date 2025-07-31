@@ -42,26 +42,28 @@ extension ProfilePage {
 
   private var authProviderIcon: String {
     guard let user = store.user else { return "person.circle" }
-    switch user.authProvider {
-    case .email:
-      return "envelope.circle"
-    case .google:
-      return "globe.circle"
-    case .apple:
-      return "applelogo"
-    }
+    return "envelope.circle"
+//    switch user.authProvider {
+//    case .email:
+//      return "envelope.circle"
+//    case .google:
+//      return "globe.circle"
+//    case .apple:
+//      return "applelogo"
+//    }
   }
 
   private var authProviderText: String {
     guard let user = store.user else { return "알 수 없음" }
-    switch user.authProvider {
-    case .email:
-      return "이메일로 가입"
-    case .google:
-      return "Google로 가입"
-    case .apple:
-      return "Apple로 가입"
-    }
+    return "이메일로 가입"
+//    switch user.authProvider {
+//    case .email:
+//      return "이메일로 가입"
+//    case .google:
+//      return "Google로 가입"
+//    case .apple:
+//      return "Apple로 가입"
+//    }
   }
 }
 
@@ -91,7 +93,7 @@ extension ProfilePage {
         VStack(spacing: 16) {
           // 사용자 기본 정보
           VStack(spacing: 8) {
-            Text(user.displayName)
+            Text(user.username)
               .font(.brainyHeadlineMedium)
               .foregroundColor(.brainyText)
 
