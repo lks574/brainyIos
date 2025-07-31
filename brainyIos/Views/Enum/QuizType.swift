@@ -18,7 +18,7 @@ enum QuizDifficulty: String, CaseIterable, Codable, Sendable {
   case hard = "어려움"
 }
 
-enum QuestionFilter: String, CaseIterable {
+enum QuestionFilter: String, CaseIterable, Codable, Sendable {
   case random = "전체 무작위"
   case excludeSolved = "풀었던 것 제외"
 }
