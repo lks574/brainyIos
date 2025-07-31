@@ -10,11 +10,27 @@
 		938EB27A2E386B4500EC1CCE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 938EB2792E386B4500EC1CCE /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		930E49762E3B123100824117 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 938EB2602E386A8900EC1CCE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 938EB2672E386A8900EC1CCE;
+			remoteInfo = brainyIos;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		930E49722E3B123100824117 /* brainyIosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = brainyIosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		938EB2682E386A8900EC1CCE /* brainyIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brainyIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		930E49732E3B123100824117 /* brainyIosTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = brainyIosTests;
+			sourceTree = "<group>";
+		};
 		938EB26A2E386A8900EC1CCE /* brainyIos */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = brainyIos;
@@ -23,6 +39,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		930E496F2E3B123100824117 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		938EB2652E386A8900EC1CCE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				938EB26A2E386A8900EC1CCE /* brainyIos */,
+				930E49732E3B123100824117 /* brainyIosTests */,
 				938EB2692E386A8900EC1CCE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				938EB2682E386A8900EC1CCE /* brainyIos.app */,
+				930E49722E3B123100824117 /* brainyIosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +78,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		930E49712E3B123100824117 /* brainyIosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 930E49782E3B123100824117 /* Build configuration list for PBXNativeTarget "brainyIosTests" */;
+			buildPhases = (
+				930E496E2E3B123100824117 /* Sources */,
+				930E496F2E3B123100824117 /* Frameworks */,
+				930E49702E3B123100824117 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				930E49772E3B123100824117 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				930E49732E3B123100824117 /* brainyIosTests */,
+			);
+			name = brainyIosTests;
+			packageProductDependencies = (
+			);
+			productName = brainyIosTests;
+			productReference = 930E49722E3B123100824117 /* brainyIosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		938EB2672E386A8900EC1CCE /* brainyIos */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 938EB2752E386A8A00EC1CCE /* Build configuration list for PBXNativeTarget "brainyIos" */;
@@ -83,9 +131,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					930E49712E3B123100824117 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 938EB2672E386A8900EC1CCE;
+					};
 					938EB2672E386A8900EC1CCE = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -109,11 +161,19 @@
 			projectRoot = "";
 			targets = (
 				938EB2672E386A8900EC1CCE /* brainyIos */,
+				930E49712E3B123100824117 /* brainyIosTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		930E49702E3B123100824117 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		938EB2662E386A8900EC1CCE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,6 +184,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		930E496E2E3B123100824117 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		938EB2642E386A8900EC1CCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,7 +200,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		930E49772E3B123100824117 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 938EB2672E386A8900EC1CCE /* brainyIos */;
+			targetProxy = 930E49762E3B123100824117 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		930E49792E3B123100824117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sro.brainyIosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/brainyIos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/brainyIos";
+			};
+			name = Debug;
+		};
+		930E497A2E3B123100824117 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sro.brainyIosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/brainyIos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/brainyIos";
+			};
+			name = Release;
+		};
 		938EB2732E386A8A00EC1CCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -318,6 +429,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		930E49782E3B123100824117 /* Build configuration list for PBXNativeTarget "brainyIosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				930E49792E3B123100824117 /* Debug */,
+				930E497A2E3B123100824117 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		938EB2632E386A8900EC1CCE /* Build configuration list for PBXProject "brainyIos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
