@@ -39,7 +39,7 @@ extension CategorySelectionPage {
         .font(.brainyTitle)
         .foregroundColor(.brainyText)
 
-      Text("퀴즈 모드: \(store.quizMode.rawValue)")
+      Text("퀴즈 모드: \(store.selectedPlayMode.rawValue)")
         .font(.brainyBodyMedium)
         .foregroundColor(.brainyTextSecondary)
     }
@@ -55,23 +55,45 @@ extension CategorySelectionPage {
 
       HStack(spacing: 12) {
         CategorySelectionPlayModeToggle(
-          title: "스테이지",
+          title: QuizMode.practice.rawValue,
+          description: "기록 안남아요",
+          icon: "pencil",
+          mode: .practice,
+          isSelected: store.selectedPlayMode == .practice
+        ) {
+          store.send(.changePlayMode(.practice))
+        }
+
+        CategorySelectionPlayModeToggle(
+          title: QuizMode.timed.rawValue,
+          description: "시간 제한",
+          icon: "stopwatch",
+          mode: .timed,
+          isSelected: store.selectedPlayMode == .timed
+        ) {
+          store.send(.changePlayMode(.timed))
+        }
+      }
+
+      HStack(spacing: 12) {
+        CategorySelectionPlayModeToggle(
+          title: QuizMode.challenge.rawValue,
+          description: "독립적 풀이",
+          icon: "trophy",
+          mode: .challenge,
+          isSelected: store.selectedPlayMode == .challenge
+        ) {
+          store.send(.changePlayMode(.challenge))
+        }
+
+        CategorySelectionPlayModeToggle(
+          title: QuizMode.stage.rawValue,
           description: "순차적 진행",
-          icon: "list.number",
+          icon: "target",
           mode: .stage,
           isSelected: store.selectedPlayMode == .stage
         ) {
           store.send(.changePlayMode(.stage))
-        }
-
-        CategorySelectionPlayModeToggle(
-          title: "개별",
-          description: "독립적 풀이",
-          icon: "square.grid.2x2",
-          mode: .individual,
-          isSelected: store.selectedPlayMode == .individual
-        ) {
-          store.send(.changePlayMode(.individual))
         }
       }
     }

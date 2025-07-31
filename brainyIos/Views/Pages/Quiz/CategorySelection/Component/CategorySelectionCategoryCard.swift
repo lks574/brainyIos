@@ -38,32 +38,30 @@ struct CategorySelectionCategoryCard: View {
   }
   
   private var categoryIcon: String {
-    switch category {
-    case .person:
-      return "👤"
-    case .general:
-      return "🧠"
-    case .country:
-      return "🌍"
-    case .drama:
-      return "🎭"
-    case .music:
-      return "🎵"
+    return switch category {
+    case .general: "🧩"
+    case .country: "🌍"
+    case .drama: "🎭"
+    case .history: "📜"
+    case .person: "👤"
+    case .music: "🎵"
+    case .food: "🍽️"
+    case .sports: "⚽"
+    case .movie: "🎬"
     }
   }
   
   private var categoryDescription: String {
-    switch category {
-    case .person:
-      return "유명인물에 대한 퀴즈"
-    case .general:
-      return "일반상식 퀴즈"
-    case .country:
-      return "세계 각국에 대한 퀴즈"
-    case .drama:
-      return "드라마와 영화 퀴즈"
-    case .music:
-      return "음악과 가수 퀴즈"
+    return switch category {
+    case .general: "일반상식 퀴즈"
+    case .country: "세계 각국에 대한 퀴즈"
+    case .drama: "유명 드라마 퀴즈"
+    case .history: "세계 역사에 대한 퀴즈"
+    case .person: "유명 인물에 대한 퀴즈"
+    case .music: "음악과 가수 퀴즈"
+    case .food: "세계 모든 음식 퀴즈"
+    case .sports: "모든 스포츠 퀴즈"
+    case .movie: "유명 영화 퀴즈"
     }
   }
   

@@ -34,7 +34,7 @@ extension QuizSessionDTO {
     id: "session-1",
     userId: "user-1",
     category: .general,
-    mode: .individual,
+    mode: .stage,
     totalQuestions: 10,
     correctAnswers: 8,
     totalTime: 120.5,

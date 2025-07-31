@@ -14,7 +14,7 @@ struct QuizModeSelectionReducer {
   enum Action: BindableAction, Sendable {
     case binding(BindingAction<State>)
     case changeQuizType(QuizType)
-    case goToCategory(QuizMode, QuizType)
+    case goToCategory(QuizType)
     case goToProfile
     case goToHistoryList
   }
@@ -31,9 +31,9 @@ struct QuizModeSelectionReducer {
         state.selectedQuizType = quizType
         return .none
 
-      case let .goToCategory(quizMode, quizType):
+      case let .goToCategory(quizType):
         return .run { _ in
-          await navigation.goToCategorySelection(quizMode, quizType)
+          await navigation.goToCategorySelection(quizType)
         }
 
       case .goToProfile:

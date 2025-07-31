@@ -22,7 +22,9 @@ struct QuizPlayPage: View {
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color.brainyBackground)
     .navigationBarHidden(true)
-
+    .task {
+      store.send(.getQuiz)
+    }
   }
 }
 
@@ -291,15 +293,12 @@ extension QuizPlayPage {
         .background(Color.brainyTextSecondary.opacity(0.2))
 
       HStack(spacing: 16) {
-        // Skip button (for individual mode)
-        if store.quizMode == .individual {
-          BrainyButton(
-            "건너뛰기",
-            style: .ghost,
-            size: .medium
-          ) {
-            store.send(.submitAnswer)
-          }
+        BrainyButton(
+          "건너뛰기",
+          style: .ghost,
+          size: .medium
+        ) {
+          store.send(.submitAnswer)
         }
 
         // Submit/Next button

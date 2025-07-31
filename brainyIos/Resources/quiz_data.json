@@ -17,8 +17,7 @@
       "options": null,
       "category": "person",
       "difficulty": "easy",
-      "type": "shortAnswer",
-      "audioURL": null
+      "type": "shortAnswer"
     },
     {
       "id": "q003",
@@ -27,8 +26,7 @@
       "options": ["RM", "진", "슈가", "제이홉"],
       "category": "music",
       "difficulty": "easy",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q004",
@@ -37,8 +35,7 @@
       "options": ["김치", "불고기", "비빔밥", "냉면"],
       "category": "food",
       "difficulty": "easy",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q005",
@@ -47,18 +44,15 @@
       "options": ["태극", "팔괘", "음양", "오행"],
       "category": "general",
       "difficulty": "medium",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q006",
       "question": "조선시대 최고의 교육기관은?",
       "correctAnswer": "성균관",
-      "options": null,
       "category": "history",
       "difficulty": "medium",
-      "type": "shortAnswer",
-      "audioURL": null
+      "type": "shortAnswer"
     },
     {
       "id": "q007",
@@ -67,8 +61,7 @@
       "options": ["가야금", "장구", "꽹과리", "북"],
       "category": "music",
       "difficulty": "medium",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q008",
@@ -77,8 +70,7 @@
       "options": ["1948년", "1950년", "1953년", "1945년"],
       "category": "history",
       "difficulty": "medium",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q009",
@@ -87,18 +79,15 @@
       "options": ["골프", "테니스", "배드민턴", "탁구"],
       "category": "sports",
       "difficulty": "easy",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q010",
       "question": "한국의 전통 주거 형태는?",
       "correctAnswer": "한옥",
-      "options": null,
       "category": "general",
       "difficulty": "easy",
-      "type": "shortAnswer",
-      "audioURL": null
+      "type": "shortAnswer"
     },
     {
       "id": "q011",
@@ -107,8 +96,7 @@
       "options": ["봉준호", "박찬욱", "김기덕", "이창동"],
       "category": "movie",
       "difficulty": "medium",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q012",
@@ -117,18 +105,15 @@
       "options": ["보리차", "녹차", "홍차", "우롱차"],
       "category": "food",
       "difficulty": "easy",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q013",
       "question": "조선 왕조의 창건자는?",
       "correctAnswer": "이성계",
-      "options": null,
       "category": "person",
       "difficulty": "hard",
-      "type": "shortAnswer",
-      "audioURL": null
+      "type": "shortAnswer"
     },
     {
       "id": "q014",
@@ -137,8 +122,7 @@
       "options": ["윷놀이", "제기차기", "팽이치기", "연날리기"],
       "category": "general",
       "difficulty": "easy",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q015",
@@ -147,18 +131,15 @@
       "options": ["삼성", "LG", "SK", "현대"],
       "category": "general",
       "difficulty": "easy",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q016",
       "question": "한국의 전통 의상은?",
       "correctAnswer": "한복",
-      "options": null,
       "category": "general",
       "difficulty": "easy",
-      "type": "shortAnswer",
-      "audioURL": null
+      "type": "shortAnswer"
     },
     {
       "id": "q017",
@@ -167,8 +148,7 @@
       "options": ["넷플릭스", "유튜브", "디즈니플러스", "아마존프라임"],
       "category": "movie",
       "difficulty": "easy",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q018",
@@ -177,8 +157,7 @@
       "options": ["태권도", "가라테", "유도", "검도"],
       "category": "sports",
       "difficulty": "easy",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q019",
@@ -187,18 +166,15 @@
       "options": ["백두산", "한라산", "지리산", "설악산"],
       "category": "general",
       "difficulty": "medium",
-      "type": "multipleChoice",
-      "audioURL": null
+      "type": "multipleChoice"
     },
     {
       "id": "q020",
       "question": "한국 전통 음악의 대표적인 장르는?",
       "correctAnswer": "판소리",
-      "options": null,
       "category": "music",
       "difficulty": "hard",
-      "type": "shortAnswer",
-      "audioURL": null
+      "type": "shortAnswer"
     }
   ]
 }

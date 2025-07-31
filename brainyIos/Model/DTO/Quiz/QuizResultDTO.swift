@@ -37,6 +37,6 @@ extension QuizResultDTO {
     timeSpent: 5.2,
     completedAt: Date(),
     category: .general,
-    quizMode: .individual
+    quizMode: .stage
   )
 }

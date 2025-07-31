@@ -3,7 +3,7 @@ import ComposableArchitecture
 
 struct NavigationClient {
   var goToQuizModeSelection: @Sendable () async -> Void
-  var goToCategorySelection: @Sendable (QuizMode, QuizType) async -> Void
+  var goToCategorySelection: @Sendable (QuizType) async -> Void
   var goToProfile: @Sendable () async -> Void
   var goToHistoryList: @Sendable () async -> Void
   var goToQuizPlay: @Sendable (QuizMode, QuizType, QuizCategory) async -> Void
@@ -13,7 +13,7 @@ struct NavigationClient {
 extension NavigationClient: DependencyKey {
   static var liveValue = NavigationClient(
     goToQuizModeSelection: { },
-    goToCategorySelection: { _, _ in },
+    goToCategorySelection: { _ in },
     goToProfile: { },
     goToHistoryList: { },
     goToQuizPlay: { _, _, _ in },
@@ -22,7 +22,7 @@ extension NavigationClient: DependencyKey {
 
   static let testValue = NavigationClient(
     goToQuizModeSelection: { },
-    goToCategorySelection: { _, _ in },
+    goToCategorySelection: { _ in },
     goToProfile: { },
     goToHistoryList: { },
     goToQuizPlay: { _, _, _ in },

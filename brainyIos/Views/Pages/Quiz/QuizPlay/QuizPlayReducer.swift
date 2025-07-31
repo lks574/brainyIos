@@ -46,6 +46,8 @@ struct QuizPlayReducer {
     case selectOption(Int)
 
     case getQuiz
+    case quizLoaded([QuizQuestionDTO])
+    case quizLoadFailed(String)
   }
 
   var body: some Reducer<State, Action> {
@@ -76,9 +78,37 @@ struct QuizPlayReducer {
         return .none
 
       case .getQuiz:
-        return .run { _ in
-         
+        state.isLoading = true
+        state.errorMessage = nil
+        
+        return .run { [quizType = state.quizType, quizCategory = state.quizCategory] send in
+          do {
+            // SwiftData 에러 방지를 위해 임시로 mock 데이터 사용
+            let mockQuestions = [QuizQuestionDTO].mockList.filter { question in
+              question.category == quizCategory && question.type == quizType
+            }
+            
+            // 만약 필터링된 결과가 없으면 전체 mock 데이터 사용
+            let questions = mockQuestions.isEmpty ? [QuizQuestionDTO].mockList : mockQuestions
+            
+            await send(.quizLoaded(Array(questions.prefix(10))))
+          } catch {
+            await send(.quizLoadFailed(error.localizedDescription))
+          }
         }
+        
+      case .quizLoaded(let questions):
+        state.isLoading = false
+        state.quizQuestions = questions
+        state.currentQuestion = questions.first
+        state.progress = 0.0
+        return .none
+        
+      case .quizLoadFailed(let errorMessage):
+        state.isLoading = false
+        state.errorMessage = errorMessage
+        print("aaa", errorMessage)
+        return .none
       }
     }
   }

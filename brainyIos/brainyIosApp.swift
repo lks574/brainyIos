@@ -31,8 +31,8 @@ struct brainyIosApp: App {
       goToQuizModeSelection: { [store] in
         await store.send(.goToQuizModeSelection)
       },
-      goToCategorySelection: { [store] quizMode, quizType in
-        await store.send(.goToCategorySelection(quizMode, quizType))
+      goToCategorySelection: { [store] quizType in
+        await store.send(.goToCategorySelection(quizType))
       },
       goToProfile: { [store] in
         await store.send(.goToProfile)

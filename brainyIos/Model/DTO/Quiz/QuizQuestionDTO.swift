@@ -9,7 +9,7 @@ struct QuizQuestionDTO: Codable, Sendable, Equatable, Identifiable {
   let difficulty: QuizDifficulty
   let type: QuizType
   let audioURL: String?
-  let isCompleted: Bool
+  let isCompleted: Bool?
 }
 
 extension QuizQuestionDTO {

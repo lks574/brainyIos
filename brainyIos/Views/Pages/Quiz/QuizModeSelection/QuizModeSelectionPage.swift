@@ -54,7 +54,7 @@ struct QuizModeSelectionPage: View {
         isSelected: store.selectedQuizType == .shortAnswer
       ) {
         store.send(.changeQuizType(.shortAnswer))
-        store.send(.goToCategory(.individual, .shortAnswer))
+        store.send(.goToCategory(.shortAnswer))
       }
 
       // 객관식 퀴즈
@@ -66,7 +66,7 @@ struct QuizModeSelectionPage: View {
         isSelected: store.selectedQuizType == .multipleChoice
       ) {
         store.send(.changeQuizType(.multipleChoice))
-        store.send(.goToCategory(.individual, .multipleChoice))
+        store.send(.goToCategory(.multipleChoice))
       }
 
       // 음성모드 퀴즈 (미구현)

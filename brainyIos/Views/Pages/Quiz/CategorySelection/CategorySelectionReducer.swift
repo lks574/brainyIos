@@ -8,11 +8,10 @@ struct CategorySelectionReducer {
 
   @ObservableState
   struct State: Equatable {
-    let quizMode: QuizMode
     let quizType: QuizType
 
     var selectedCategory: QuizCategory?
-    var selectedPlayMode: QuizMode = .individual
+    var selectedPlayMode: QuizMode = .stage
     var selectedQuestionFilter: QuestionFilter = .random
   }
 
@@ -41,7 +40,7 @@ struct CategorySelectionReducer {
       case .goToQuizPlay:
         guard let category = state.selectedCategory else { return .none }
         return .run { [state] _ in
-          await navigation.goToQuizPlay(state.quizMode, state.quizType, category)
+          await navigation.goToQuizPlay(state.selectedPlayMode, state.quizType, category)
         }
 
       case .changePlayMode(let quizMode):
