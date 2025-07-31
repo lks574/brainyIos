@@ -39,7 +39,10 @@ struct CategorySelectionReducer {
         }
 
       case .goToQuizPlay:
-        return .none
+        guard let category = state.selectedCategory else { return .none }
+        return .run { [state] _ in
+          await navigation.goToQuizPlay(state.quizMode, state.quizType, category)
+        }
 
       case .changePlayMode(let quizMode):
         state.selectedPlayMode = quizMode

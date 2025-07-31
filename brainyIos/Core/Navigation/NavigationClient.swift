@@ -6,6 +6,7 @@ struct NavigationClient {
   var goToCategorySelection: @Sendable (QuizMode, QuizType) async -> Void
   var goToProfile: @Sendable () async -> Void
   var goToHistoryList: @Sendable () async -> Void
+  var goToQuizPlay: @Sendable (QuizMode, QuizType, QuizCategory) async -> Void
   var goToBack: @Sendable () async -> Void
 }
 
@@ -15,6 +16,7 @@ extension NavigationClient: DependencyKey {
     goToCategorySelection: { _, _ in },
     goToProfile: { },
     goToHistoryList: { },
+    goToQuizPlay: { _, _, _ in },
     goToBack: { }
   )
 
@@ -23,6 +25,7 @@ extension NavigationClient: DependencyKey {
     goToCategorySelection: { _, _ in },
     goToProfile: { },
     goToHistoryList: { },
+    goToQuizPlay: { _, _, _ in },
     goToBack: { }
   )
 }
