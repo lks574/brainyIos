@@ -1,29 +1,12 @@
-import Combine
 import Foundation
 import SwiftData
 
-final class SwiftDataManager: ObservableObject {
-  private let modelContainer: ModelContainer
-  private let modelContext: ModelContext
+final class UserRepository {
+  private let dataManager: SwiftDataManager
+  private var modelContext: ModelContext { dataManager.modelContext }
 
-  init() throws {
-    let schema = Schema([
-      UserEntity.self,
-      QuizQuestionEntity.self,
-      QuizSessionEntity.self,
-      QuizResultEntity.self
-    ])
-
-    let modelConfiguration = ModelConfiguration(
-      schema: schema,
-      isStoredInMemoryOnly: false)
-
-    self.modelContainer = try ModelContainer(
-      for: schema,
-      configurations: [modelConfiguration]
-    )
-
-    self.modelContext = ModelContext(modelContainer)
+  init(dataManager: SwiftDataManager = .shared) {
+    self.dataManager = dataManager
   }
 
   func createUser(_ req: CreateUserRequest) throws -> UserDTO {
@@ -34,7 +17,7 @@ final class SwiftDataManager: ObservableObject {
       profileImageURL: req.profileImageURL
     )
     modelContext.insert(user)
-    try modelContext.save()
+    try dataManager.save()
     return UserDTO(from: user)
   }
 
@@ -74,9 +57,9 @@ final class SwiftDataManager: ObservableObject {
     if let favoriteCategory = req.favoriteCategory {
       user.favoriteCategory = favoriteCategory
     }
-    
+
     user.updateTimestamp()
-    try modelContext.save()
+    try dataManager.save()
     return UserDTO(from: user)
   }
 
@@ -99,9 +82,9 @@ final class SwiftDataManager: ObservableObject {
     if let bestStreak = req.bestStreak {
       user.bestStreak = bestStreak
     }
-    
+
     user.updateTimestamp()
-    try modelContext.save()
+    try dataManager.save()
     return UserDTO(from: user)
   }
 
@@ -121,7 +104,7 @@ final class SwiftDataManager: ObservableObject {
     guard let user = try modelContext.fetch(descriptor).first else { return false }
 
     modelContext.delete(user)
-    try modelContext.save()
+    try dataManager.save()
     return true
   }
 }

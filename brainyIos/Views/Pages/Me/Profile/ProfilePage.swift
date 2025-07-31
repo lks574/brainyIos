@@ -41,7 +41,7 @@ extension ProfilePage {
   }
 
   private var authProviderIcon: String {
-    guard let user = store.user else { return "person.circle" }
+//    guard let user = store.user else { return "person.circle" }
     return "envelope.circle"
 //    switch user.authProvider {
 //    case .email:
@@ -54,7 +54,7 @@ extension ProfilePage {
   }
 
   private var authProviderText: String {
-    guard let user = store.user else { return "알 수 없음" }
+//    guard let user = store.user else { return "알 수 없음" }
     return "이메일로 가입"
 //    switch user.authProvider {
 //    case .email:

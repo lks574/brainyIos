@@ -138,11 +138,11 @@ extension CategorySelectionPage {
         size: .large,
         isEnabled: store.selectedCategory != nil
       ) {
-        if let category = store.selectedCategory {
+        store.send(.goToQuizPlay)
+//        if let category = store.selectedCategory {
           // TODO: 라우팅
-          store.send(.goToQuizPlay)
-          //          coordinator.navigateToQuizPlay(category: category, mode: selectedPlayMode, type: quizType)
-        }
+          // coordinator.navigateToQuizPlay(category: category, mode: selectedPlayMode, type: quizType)
+//        }
       }
 
       // 뒤로 가기 버튼

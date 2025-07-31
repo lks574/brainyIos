@@ -13,27 +13,28 @@ struct UserClient {
 
 extension UserClient: DependencyKey {
   static let liveValue: UserClient = {
+    let repository = UserRepository()
     return UserClient(
       createUser: { req in
-        try SwiftDataManager().createUser(req)
+        try repository.createUser(req)
       },
       fetchUsers: {
-        try SwiftDataManager().fetchUsers()
+        try repository.fetchUsers()
       },
       fetchUser: { id in
-        try SwiftDataManager().fetchUser(by: id)
+        try repository.fetchUser(by: id)
       },
       updateUser: { id, req in
-        try SwiftDataManager().updateUser(id: id, with: req)
+        try repository.updateUser(id: id, with: req)
       },
       updateUserStats: { id, req in
-        try SwiftDataManager().updateUserStats(id: id, with: req)
+        try repository.updateUserStats(id: id, with: req)
       },
       deleteUser: { id in
-        try SwiftDataManager().deleteUser(id: id)
+        try repository.deleteUser(id: id)
       },
       getCurrentUser: {
-        try SwiftDataManager().getCurrentUser()
+        try repository.getCurrentUser()
       }
     )
   }()
