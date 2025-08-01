@@ -16,10 +16,7 @@ struct QuizPlayReducer {
     var quizQuestions: [QuizQuestionDTO] = []
     var selectedOptionIndex: Int?
     var shortAnswerText: String = ""
-    var selectOption: Int?
-
     var isLastQuestion: Bool = false
-    var hasAnswered: Bool = false
 
     var timeRemaining: Int = 0
     var progress: Float = 0
@@ -27,7 +24,28 @@ struct QuizPlayReducer {
     var isLoading: Bool = false
     var errorMessage: String?
 
-    var currentQuestion: QuizQuestionDTO?
+    var hasAnswered: Bool {
+      if let question = currentQuestion {
+        switch question.type {
+        case .multipleChoice:
+          return selectedOptionIndex != nil
+        case .shortAnswer:
+          return !shortAnswerText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        case .voice, .ai:
+          return !shortAnswerText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
+      }
+      return false
+    }
+
+    var currentQuestion: QuizQuestionDTO? {
+      if quizType == .ai {
+        return nil
+      } else {
+        guard currentQuestionIndex < quizQuestions.count else { return nil }
+        return quizQuestions[currentQuestionIndex]
+      }
+    }
 
     init(quizType: QuizType, quizMode: QuizMode, quizCategory: QuizCategory) {
       self.quizType = quizType
@@ -74,7 +92,7 @@ struct QuizPlayReducer {
         return .none
 
       case .selectOption(let optionIndex):
-        state.selectOption = optionIndex
+        state.selectedOptionIndex = optionIndex
         return .none
 
       case .getQuiz:
@@ -102,14 +120,12 @@ struct QuizPlayReducer {
       case .quizLoaded(let questions):
         state.isLoading = false
         state.quizQuestions = questions
-        state.currentQuestion = questions.first
         state.progress = 0.0
         return .none
         
       case .quizLoadFailed(let errorMessage):
         state.isLoading = false
         state.errorMessage = errorMessage
-        print("aaa", errorMessage)
         return .none
       }
     }
