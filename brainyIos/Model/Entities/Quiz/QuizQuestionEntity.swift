@@ -11,9 +11,13 @@ final class QuizQuestionEntity {
   var difficulty: String
   var type: String
   var audioURL: String? // 음성모드인 경우
-  var isCompleted: Bool = false
+  var stageId: String? // 어떤 스테이지에 속하는지
+  var orderInStage: Int? // 스테이지 내에서의 순서 (1-10)
   
-  init(id: String, question: String, correctAnswer: String, category: QuizCategory, difficulty: QuizDifficulty, type: QuizType, options: [String]? = nil, audioURL: String? = nil) {
+  // 관계
+  @Relationship var stage: QuizStageEntity?
+  
+  init(id: String, question: String, correctAnswer: String, category: QuizCategory, difficulty: QuizDifficulty, type: QuizType, options: [String]? = nil, audioURL: String? = nil, stageId: String? = nil, orderInStage: Int? = nil) {
     self.id = id
     self.question = question
     self.correctAnswer = correctAnswer
@@ -22,5 +26,22 @@ final class QuizQuestionEntity {
     self.type = type.rawValue
     self.options = options
     self.audioURL = audioURL
+    self.stageId = stageId
+    self.orderInStage = orderInStage
+  }
+  
+  /// 카테고리 enum 반환
+  var categoryEnum: QuizCategory {
+    return QuizCategory(rawValue: category) ?? .general
+  }
+  
+  /// 난이도 enum 반환
+  var difficultyEnum: QuizDifficulty {
+    return QuizDifficulty(rawValue: difficulty) ?? .easy
+  }
+  
+  /// 타입 enum 반환
+  var typeEnum: QuizType {
+    return QuizType(rawValue: type) ?? .multipleChoice
   }
 }

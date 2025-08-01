@@ -17,22 +17,7 @@ enum QuizType: String, Codable, CaseIterable, Sendable {
   }
 }
 
-// MARK: - Quiz Mode
-enum QuizMode: String, Codable, CaseIterable, Sendable {
-  case practice = "practice"
-  case timed = "timed"
-  case challenge = "challenge"
-  case stage = "stage"
-
-  var displayName: String {
-    return switch self {
-    case .practice: "연습 모드"
-    case .timed: "시간 제한"
-    case .challenge: "도전 모드"
-    case .stage: "스테이지"
-    }
-  }
-}
+// MARK: - Quiz Mode (제거됨 - 모든 퀴즈는 Stage 형태로 진행)
 
 // MARK: - Quiz Category
 enum QuizCategory: String, Codable, CaseIterable, Sendable {

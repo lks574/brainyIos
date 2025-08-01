@@ -9,7 +9,8 @@ struct QuizQuestionDTO: Codable, Sendable, Equatable, Identifiable {
   let difficulty: QuizDifficulty
   let type: QuizType
   let audioURL: String?
-  let isCompleted: Bool?
+  let stageId: String?
+  let orderInStage: Int?
 }
 
 extension QuizQuestionDTO {
@@ -18,11 +19,12 @@ extension QuizQuestionDTO {
     self.question = entity.question
     self.correctAnswer = entity.correctAnswer
     self.options = entity.options
-    self.category = QuizCategory(rawValue: entity.category) ?? .all
-    self.difficulty = QuizDifficulty(rawValue: entity.difficulty) ?? .all
-    self.type = QuizType(rawValue: entity.type) ?? .shortAnswer
+    self.category = entity.categoryEnum
+    self.difficulty = entity.difficultyEnum
+    self.type = entity.typeEnum
     self.audioURL = entity.audioURL
-    self.isCompleted = entity.isCompleted
+    self.stageId = entity.stageId
+    self.orderInStage = entity.orderInStage
   }
 }
 
@@ -37,7 +39,8 @@ extension QuizQuestionDTO {
     difficulty: .easy,
     type: .multipleChoice,
     audioURL: nil,
-    isCompleted: false
+    stageId: "general_stage_1",
+    orderInStage: 1
   )
 }
 
@@ -52,7 +55,8 @@ extension [QuizQuestionDTO] {
       difficulty: .easy,
       type: .multipleChoice,
       audioURL: nil,
-      isCompleted: false
+      stageId: "general_stage_1",
+      orderInStage: 1
     ),
     QuizQuestionDTO(
       id: "question-2",
@@ -63,7 +67,8 @@ extension [QuizQuestionDTO] {
       difficulty: .medium,
       type: .shortAnswer,
       audioURL: nil,
-      isCompleted: false
+      stageId: "person_stage_2",
+      orderInStage: 3
     ),
     QuizQuestionDTO(
       id: "question-3",
@@ -74,7 +79,8 @@ extension [QuizQuestionDTO] {
       difficulty: .easy,
       type: .multipleChoice,
       audioURL: nil,
-      isCompleted: true
+      stageId: "music_stage_1",
+      orderInStage: 5
     )
   ]
 }

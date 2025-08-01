@@ -10,16 +10,14 @@ final class UserEntity {
   var createdAt: Date
   var updatedAt: Date
   
-  // 퀴즈 관련 통계
-  var totalQuizzesTaken: Int = 0
-  var totalCorrectAnswers: Int = 0
-  var favoriteCategory: QuizCategory?
+  // Stage 관련 통계
+  var totalStagesCompleted: Int = 0
+  var totalStars: Int = 0
   var currentStreak: Int = 0
   var bestStreak: Int = 0
   
   // 관계
-  @Relationship(deleteRule: .cascade) var quizSessions: [QuizSessionEntity] = []
-  @Relationship(deleteRule: .cascade) var quizResults: [QuizResultEntity] = []
+  @Relationship(deleteRule: .cascade) var stageResults: [QuizStageResultEntity] = []
   
   init(id: String, username: String, email: String? = nil, profileImageURL: String? = nil) {
     self.id = id
@@ -32,8 +30,27 @@ final class UserEntity {
   
   /// 전체 정확도 계산
   var overallAccuracy: Double {
-    guard totalQuizzesTaken > 0 else { return 0 }
-    return Double(totalCorrectAnswers) / Double(totalQuizzesTaken)
+    guard !stageResults.isEmpty else { return 0 }
+    let totalScore = stageResults.reduce(0) { $0 + $1.score }
+    let totalQuestions = stageResults.count * 10
+    return Double(totalScore) / Double(totalQuestions)
+  }
+  
+  /// 카테고리별 진행상황 계산
+  func getCategoryProgress(for category: QuizCategory) -> (unlockedStage: Int, totalStars: Int, completedStages: Int) {
+    let categoryResults = stageResults.filter { $0.stage?.categoryEnum == category }
+    let completedStages = categoryResults.filter { $0.isCleared }.count
+    let unlockedStage = completedStages + 1
+    let totalStars = categoryResults.reduce(0) { $0 + $1.stars }
+    
+    return (unlockedStage: unlockedStage, totalStars: totalStars, completedStages: completedStages)
+  }
+  
+  /// 사용자 통계 업데이트
+  func updateStats() {
+    totalStagesCompleted = stageResults.filter { $0.isCleared }.count
+    totalStars = stageResults.reduce(0) { $0 + $1.stars }
+    updateTimestamp()
   }
   
   /// 업데이트 시간 갱신

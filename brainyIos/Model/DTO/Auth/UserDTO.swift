@@ -8,10 +8,9 @@ struct UserDTO: Codable, Sendable, Equatable {
   let createdAt: Date
   let updatedAt: Date
   
-  // 퀴즈 통계
-  let totalQuizzesTaken: Int
-  let totalCorrectAnswers: Int
-  let favoriteCategory: QuizCategory?
+  // Stage 관련 통계
+  let totalStagesCompleted: Int
+  let totalStars: Int
   let currentStreak: Int
   let bestStreak: Int
   let overallAccuracy: Double
@@ -25,9 +24,8 @@ extension UserDTO {
     self.profileImageURL = entity.profileImageURL
     self.createdAt = entity.createdAt
     self.updatedAt = entity.updatedAt
-    self.totalQuizzesTaken = entity.totalQuizzesTaken
-    self.totalCorrectAnswers = entity.totalCorrectAnswers
-    self.favoriteCategory = entity.favoriteCategory
+    self.totalStagesCompleted = entity.totalStagesCompleted
+    self.totalStars = entity.totalStars
     self.currentStreak = entity.currentStreak
     self.bestStreak = entity.bestStreak
     self.overallAccuracy = entity.overallAccuracy
@@ -43,11 +41,10 @@ extension UserDTO {
     profileImageURL: nil,
     createdAt: Date(),
     updatedAt: Date(),
-    totalQuizzesTaken: 50,
-    totalCorrectAnswers: 35,
-    favoriteCategory: .general,
+    totalStagesCompleted: 15,
+    totalStars: 35,
     currentStreak: 3,
     bestStreak: 7,
-    overallAccuracy: 0.7
+    overallAccuracy: 0.75
   )
 }
