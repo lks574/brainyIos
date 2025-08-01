@@ -85,6 +85,26 @@ struct QuizPlayReducer {
         return .none
 
       case .submitAnswer:
+        // 답변이 있는지 확인
+        guard state.hasAnswered else { return .none }
+        
+        // 다음 문제로 이동
+        if state.currentQuestionIndex < state.quizQuestions.count - 1 {
+          state.currentQuestionIndex += 1
+          state.selectedOptionIndex = nil
+          state.shortAnswerText = ""
+          
+          // 진행률 업데이트
+          state.progress = Float(state.currentQuestionIndex) / Float(state.quizQuestions.count)
+          
+          // 마지막 문제인지 확인
+          state.isLastQuestion = state.currentQuestionIndex == state.quizQuestions.count - 1
+        } else {
+          // 퀴즈 완료 - 결과 페이지로 이동하거나 완료 처리
+          state.isLastQuestion = true
+          // TODO: 퀴즈 완료 처리 로직 추가
+        }
+        
         return .none
 
       case .changeShortAnswerText(let shortAnswerText):

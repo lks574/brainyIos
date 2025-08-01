@@ -104,7 +104,7 @@ extension QuizPlayPage {
         .font(.brainyHeadlineMedium)
         .foregroundColor(.brainyText)
 
-      Text("해당 카테고리에 \(store.quizType.rawValue) 문제가 없습니다.")
+      Text("해당 카테고리에 \(store.quizType.displayName) 문제가 없습니다.")
         .font(.brainyBodyLarge)
         .foregroundColor(.brainyTextSecondary)
         .multilineTextAlignment(.center)
@@ -144,7 +144,7 @@ extension QuizPlayPage {
       VStack(alignment: .leading, spacing: 16) {
         // Question type badge
         HStack {
-          Text(store.quizType.rawValue)
+          Text(store.quizType.displayName)
             .font(.brainyLabelMedium)
             .foregroundColor(.brainyPrimary)
             .padding(.horizontal, 12)
@@ -160,7 +160,7 @@ extension QuizPlayPage {
           //            showHintForCurrentQuestion()
           //          }
 
-          Text(store.quizCategory.rawValue)
+          Text(store.quizCategory.displayName)
             .font(.brainyLabelMedium)
             .foregroundColor(.brainyTextSecondary)
         }
