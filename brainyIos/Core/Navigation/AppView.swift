@@ -21,6 +21,8 @@ struct AppView: View {
         ProfilePage(store: store)
       case .quizPlay(let store):
         QuizPlayPage(store: store)
+      case .quizResult(let store):
+        QuizResultPage(store: store)
       case .historyList(let store):
         HistoryListPage(store: store)
       }

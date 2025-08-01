@@ -4,7 +4,6 @@ import AuthenticationServices
 
 struct SignInPage: View {
   @Bindable var store: StoreOf<SignInReducer>
-  @Environment(\.dismiss) private var dismiss
 
   var body: some View {
     NavigationView {
@@ -39,7 +38,7 @@ struct SignInPage: View {
     }
     .onChange(of: store.isAuthenticated) { _, isAuthenticated in
       if isAuthenticated {
-        dismiss()
+
       }
     }
   }
