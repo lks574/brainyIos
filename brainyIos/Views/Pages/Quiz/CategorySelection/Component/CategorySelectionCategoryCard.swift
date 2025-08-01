@@ -48,6 +48,7 @@ struct CategorySelectionCategoryCard: View {
     case .food: "🍽️"
     case .sports: "⚽"
     case .movie: "🎬"
+    case .all: "🗂️"
     }
   }
   
@@ -62,6 +63,7 @@ struct CategorySelectionCategoryCard: View {
     case .food: "세계 모든 음식 퀴즈"
     case .sports: "모든 스포츠 퀴즈"
     case .movie: "유명 영화 퀴즈"
+    case .all: "모든 퀴즈"
     }
   }
   

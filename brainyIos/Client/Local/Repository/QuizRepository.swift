@@ -91,21 +91,21 @@ extension QuizRepository {
        let difficulty = filter.difficulty,
        let type = filter.type {
       predicate = #Predicate<QuizQuestionEntity> { question in
-        question.category == category &&
-        question.difficulty == difficulty &&
-        question.type == type
+        question.category == category.rawValue &&
+        question.difficulty == difficulty.rawValue &&
+        question.type == type.rawValue
       }
     } else if let category = filter.category {
       predicate = #Predicate<QuizQuestionEntity> { question in
-        question.category == category
+        question.category == category.rawValue
       }
     } else if let difficulty = filter.difficulty {
       predicate = #Predicate<QuizQuestionEntity> { question in
-        question.difficulty == difficulty
+        question.difficulty == difficulty.rawValue
       }
     } else if let type = filter.type {
       predicate = #Predicate<QuizQuestionEntity> { question in
-        question.type == type
+        question.type == type.rawValue
       }
     }
 
@@ -146,13 +146,13 @@ extension QuizRepository {
       question.options = options
     }
     if let category = req.category {
-      question.category = category
+      question.category = category.rawValue
     }
     if let difficulty = req.difficulty {
-      question.difficulty = difficulty
+      question.difficulty = difficulty.rawValue
     }
     if let type = req.type {
-      question.type = type
+      question.type = type.rawValue
     }
     if let audioURL = req.audioURL {
       question.audioURL = audioURL

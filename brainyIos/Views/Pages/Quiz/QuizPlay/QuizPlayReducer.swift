@@ -83,15 +83,17 @@ struct QuizPlayReducer {
         
         return .run { [quizType = state.quizType, quizCategory = state.quizCategory] send in
           do {
-            // SwiftData 에러 방지를 위해 임시로 mock 데이터 사용
-            let mockQuestions = [QuizQuestionDTO].mockList.filter { question in
-              question.category == quizCategory && question.type == quizType
-            }
+            let filterRequest = QuizQuestionFilterRequest(
+              category: quizCategory == .all ? nil : quizCategory,
+              difficulty: nil, // 난이도 필터링 없음
+              type: quizType,
+              filter: .random,
+              userId: nil, // 사용자별 필터링 없음
+              limit: 10 // 10개 문제로 제한
+            )
             
-            // 만약 필터링된 결과가 없으면 전체 mock 데이터 사용
-            let questions = mockQuestions.isEmpty ? [QuizQuestionDTO].mockList : mockQuestions
-            
-            await send(.quizLoaded(Array(questions.prefix(10))))
+            let questions = try await quizClient.fetchQuestions(filterRequest)
+            await send(.quizLoaded(questions))
           } catch {
             await send(.quizLoadFailed(error.localizedDescription))
           }

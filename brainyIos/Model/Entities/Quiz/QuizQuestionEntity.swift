@@ -7,9 +7,9 @@ final class QuizQuestionEntity {
   var question: String
   var correctAnswer: String
   var options: [String]? // 객관식인 경우
-  var category: QuizCategory
-  var difficulty: QuizDifficulty
-  var type: QuizType
+  var category: String
+  var difficulty: String
+  var type: String
   var audioURL: String? // 음성모드인 경우
   var isCompleted: Bool = false
   
@@ -17,9 +17,9 @@ final class QuizQuestionEntity {
     self.id = id
     self.question = question
     self.correctAnswer = correctAnswer
-    self.category = category
-    self.difficulty = difficulty
-    self.type = type
+    self.category = category.rawValue
+    self.difficulty = difficulty.rawValue
+    self.type = type.rawValue
     self.options = options
     self.audioURL = audioURL
   }

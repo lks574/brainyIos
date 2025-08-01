@@ -18,9 +18,9 @@ extension QuizQuestionDTO {
     self.question = entity.question
     self.correctAnswer = entity.correctAnswer
     self.options = entity.options
-    self.category = entity.category
-    self.difficulty = entity.difficulty
-    self.type = entity.type
+    self.category = QuizCategory(rawValue: entity.category) ?? .all
+    self.difficulty = QuizDifficulty(rawValue: entity.difficulty) ?? .all
+    self.type = QuizType(rawValue: entity.type) ?? .shortAnswer
     self.audioURL = entity.audioURL
     self.isCompleted = entity.isCompleted
   }

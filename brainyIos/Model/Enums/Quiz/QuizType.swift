@@ -45,27 +45,20 @@ enum QuizCategory: String, Codable, CaseIterable, Sendable {
   case food = "food"
   case sports = "sports"
   case movie = "movie"
+  case all = "all"
 
   var displayName: String {
-    switch self {
-    case .general:
-      return "일반상식"
-    case .country:
-      return "국가"
-    case .drama:
-      return "드라마"
-    case .history:
-      return "역사"
-    case .person:
-      return "인물"
-    case .music:
-      return "음악"
-    case .food:
-      return "음식"
-    case .sports:
-      return "스포츠"
-    case .movie:
-      return "영화"
+    return switch self {
+    case .general: "일반상식"
+    case .country: "국가"
+    case .drama: "드라마"
+    case .history: "역사"
+    case .person: "인물"
+    case .music: "음악"
+    case .food: "음식"
+    case .sports: "스포츠"
+    case .movie: "영화"
+    case .all: "전체"
     }
   }
 }
@@ -75,15 +68,14 @@ enum QuizDifficulty: String, Codable, CaseIterable, Sendable {
   case easy = "easy"
   case medium = "medium"
   case hard = "hard"
+  case all = "all"
 
   var displayName: String {
-    switch self {
-    case .easy:
-      return "쉬움"
-    case .medium:
-      return "보통"
-    case .hard:
-      return "어려움"
+    return switch self {
+    case .easy: "쉬움"
+    case .medium: "보통"
+    case .hard: "어려움"
+    case .all: "전체"
     }
   }
 }
