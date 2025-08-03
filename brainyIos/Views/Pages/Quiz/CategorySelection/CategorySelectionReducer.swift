@@ -11,7 +11,6 @@ struct CategorySelectionReducer {
     let quizType: QuizType
 
     var selectedCategory: QuizCategory?
-    var selectedPlayMode: QuizMode = .stage
     var selectedQuestionFilter: QuestionFilter = .random
   }
 
@@ -19,7 +18,6 @@ struct CategorySelectionReducer {
     case binding(BindingAction<State>)
     case goToBack
     case goToQuizPlay
-    case changePlayMode(QuizMode)
     case changeFilter(QuestionFilter)
     case changeCategory(QuizCategory)
   }
@@ -40,12 +38,8 @@ struct CategorySelectionReducer {
       case .goToQuizPlay:
         guard let category = state.selectedCategory else { return .none }
         return .run { [state] _ in
-          await navigation.goToQuizPlay(state.selectedPlayMode, state.quizType, category)
+          await navigation.goToQuizPlay(state.quizType, category)
         }
-
-      case .changePlayMode(let quizMode):
-        state.selectedPlayMode = quizMode
-        return .none
 
       case .changeFilter(let filter):
         state.selectedQuestionFilter = filter

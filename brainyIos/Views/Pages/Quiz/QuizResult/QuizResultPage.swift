@@ -11,35 +11,35 @@ struct QuizResultPage: View {
         Text("퀴즈 완료!")
           .font(.brainyTitle)
           .foregroundColor(.brainyText)
-        
-        Text(store.session.category.displayName)
+
+        Text(store.stateResult.stageId)
           .font(.brainyTitleLarge)
           .foregroundColor(.brainyTextSecondary)
       }
-      
+
       // 점수 카드
       VStack(spacing: 24) {
         // 메인 점수
         VStack(spacing: 8) {
-          Text("\(store.session.correctAnswers)")
+          Text("\(store.stateResult.score)")
             .font(.system(size: 64, weight: .bold))
             .foregroundColor(.brainyPrimary)
-          
-          Text("/ \(store.session.totalQuestions)")
+
+          Text("/ 10")
             .font(.brainyTitleMedium)
             .foregroundColor(.brainyTextSecondary)
-          
+
           Text("정답")
             .font(.brainyBody)
             .foregroundColor(.brainyText)
         }
-        
+
         // 정확도 표시
         VStack(spacing: 8) {
-          Text("\(Int(store.session.accuracy * 100))%")
+          Text("\(Int(store.stateResult.accuracy * 100))%")
             .font(.brainyTitleMedium)
             .foregroundColor(.brainyText)
-          
+
           Text("정확도")
             .font(.brainyCaption)
             .foregroundColor(.brainyTextSecondary)
@@ -52,29 +52,29 @@ struct QuizResultPage: View {
       .padding(24)
       .background(Color.brainyCardBackground)
       .cornerRadius(16)
-      
+
       // 추가 정보
       VStack(spacing: 12) {
         HStack {
           Text("소요 시간")
             .font(.brainyBody)
             .foregroundColor(.brainyTextSecondary)
-          
+
           Spacer()
-          
+
           Text(formattedTime)
             .font(.brainyBody)
             .foregroundColor(.brainyText)
         }
-        
+
         HStack {
-          Text("퀴즈 모드")
+          Text("starsDisplay")
             .font(.brainyBody)
             .foregroundColor(.brainyTextSecondary)
-          
+
           Spacer()
-          
-          Text(store.session.mode.displayName)
+
+          Text(store.stateResult.starsDisplay)
             .font(.brainyBody)
             .foregroundColor(.brainyText)
         }
@@ -82,9 +82,9 @@ struct QuizResultPage: View {
       .padding(20)
       .background(Color.brainyCardBackground)
       .cornerRadius(12)
-      
+
       Spacer()
-      
+
       // 액션 버튼들
       VStack(spacing: 12) {
         BrainyButton("다시 퀴즈하기", style: .primary) {
@@ -101,10 +101,12 @@ struct QuizResultPage: View {
     .background(Color.brainyBackground)
     .navigationBarHidden(true)
   }
-  
+}
+
+extension QuizResultPage {
   private var formattedTime: String {
-    let minutes = Int(store.session.totalTime) / 60
-    let seconds = Int(store.session.totalTime) % 60
+    let minutes = store.stateResult.timeSpent / 60
+    let seconds = Int(store.stateResult.timeSpent) % 60
     return String(format: "%d분 %02d초", minutes, seconds)
   }
 }

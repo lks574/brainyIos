@@ -15,17 +15,19 @@ final class UserEntity {
   var totalStars: Int = 0
   var currentStreak: Int = 0
   var bestStreak: Int = 0
-  
+  var favoriteCategory: String?
+
   // 관계
   @Relationship(deleteRule: .cascade) var stageResults: [QuizStageResultEntity] = []
   
-  init(id: String, username: String, email: String? = nil, profileImageURL: String? = nil) {
+  init(id: String, username: String, email: String? = nil, profileImageURL: String? = nil, favoriteCategory: QuizCategory? = nil) {
     self.id = id
     self.username = username
     self.email = email
     self.profileImageURL = profileImageURL
     self.createdAt = Date()
     self.updatedAt = Date()
+    self.favoriteCategory = favoriteCategory?.rawValue
   }
   
   /// 전체 정확도 계산

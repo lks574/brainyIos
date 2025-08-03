@@ -68,7 +68,7 @@ struct QuizPlayReducer {
     case getStageQuestions
     case stageQuestionsLoaded([QuizQuestionDTO])
     case stageQuestionsLoadFailed(String)
-    case stageCompleted(QuizStageResultEntity)
+    case stageCompleted(QuizStageResultDTO)
   }
 
   var body: some Reducer<State, Action> {
@@ -138,16 +138,16 @@ struct QuizPlayReducer {
       case .getStageQuestions:
         state.isLoading = true
         state.errorMessage = nil
-        
-        return .run { [stageId = state.stageId] send in
-          do {
-            // 스테이지별 문제 로드
-            let questions = try await quizClient.fetchStageQuestions(stageId: stageId)
-            await send(.stageQuestionsLoaded(questions))
-          } catch {
-            await send(.stageQuestionsLoadFailed(error.localizedDescription))
-          }
-        }
+        return .none
+//        return .run { [stageId = state.stageId] send in
+//          do {
+//            // 스테이지별 문제 로드
+//            let questions = try await quizClient.fetchStageQuestions(stageId: stageId)
+//            await send(.stageQuestionsLoaded(questions))
+//          } catch {
+//            await send(.stageQuestionsLoadFailed(error.localizedDescription))
+//          }
+//        }
         
       case .stageQuestionsLoaded(let questions):
         state.isLoading = false
@@ -170,10 +170,9 @@ struct QuizPlayReducer {
       }
     }
   }
-}
-  
+
   // MARK: - Helper Functions
-  
+
   /// 답변 체크 함수
   private func checkAnswer(question: QuizQuestionDTO, selectedIndex: Int?, shortAnswer: String) -> Bool {
     switch question.type {
@@ -182,7 +181,7 @@ struct QuizPlayReducer {
             let options = question.options,
             selectedIndex < options.count else { return false }
       return options[selectedIndex] == question.correctAnswer
-      
+
     case .shortAnswer, .voice, .ai:
       let userAnswer = shortAnswer.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
       let correctAnswer = question.correctAnswer.lowercased()

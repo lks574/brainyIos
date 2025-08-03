@@ -23,7 +23,7 @@ struct QuizPlayPage: View {
     .background(Color.brainyBackground)
     .navigationBarHidden(true)
     .task {
-      store.send(.getQuiz)
+//      store.send(.getQuiz)
     }
   }
 }
@@ -82,7 +82,7 @@ extension QuizPlayPage {
 
       VStack(spacing: 12) {
         BrainyButton("다시 시도", style: .primary) {
-          store.send(.startQuiz)
+//          store.send(.startQuiz)
         }
 
         BrainyButton("뒤로 가기", style: .secondary) {

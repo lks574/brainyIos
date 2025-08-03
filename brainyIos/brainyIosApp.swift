@@ -40,8 +40,8 @@ struct brainyIosApp: App {
       goToHistoryList: { [store] in
         await store.send(.goToHistoryList)
       },
-      goToQuizPlay: { [store] quizMode, quizType, quizCategory in
-        await store.send(.goToQuizPlay(quizMode, quizType, quizCategory))
+      goToQuizPlay: { [store] quizType, quizCategory in
+        await store.send(.goToQuizPlay(quizType, quizCategory))
       },
       goToQuizResult: { [store] in
 

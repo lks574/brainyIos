@@ -19,7 +19,7 @@ struct AppFeature {
     case goToBack
     case goToProfile
     case goToHistoryList
-    case goToQuizPlay(QuizMode, QuizType, QuizCategory)
+    case goToQuizPlay(QuizType, QuizCategory)
     case goToQuizResult
     case root(SignInReducer.Action)
   }
@@ -60,8 +60,8 @@ struct AppFeature {
         state.path.append(.historyList(HistoryListReducer.State()))
         return .none
 
-      case let .goToQuizPlay(quizMode, quizType, quizCategory):
-        state.path.append(.quizPlay(QuizPlayReducer.State(quizType: quizType, quizMode: quizMode, quizCategory: quizCategory)))
+      case let .goToQuizPlay(quizType, quizCategory):
+        state.path.append(.quizPlay(QuizPlayReducer.State(quizType: quizType, stageId: "0", quizCategory: quizCategory)))
         return .none
 
       case .goToQuizResult:

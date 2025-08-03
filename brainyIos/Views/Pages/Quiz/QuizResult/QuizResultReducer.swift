@@ -7,7 +7,7 @@ struct QuizResultReducer {
 
   @ObservableState
   struct State: Equatable {
-    let session: QuizSessionDTO
+    let stateResult: QuizStageResultDTO
   }
 
   enum Action: BindableAction, Sendable {

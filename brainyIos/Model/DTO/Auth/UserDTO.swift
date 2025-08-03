@@ -7,7 +7,8 @@ struct UserDTO: Codable, Sendable, Equatable {
   let profileImageURL: String?
   let createdAt: Date
   let updatedAt: Date
-  
+  let favoriteCategory: QuizCategory
+
   // Stage 관련 통계
   let totalStagesCompleted: Int
   let totalStars: Int
@@ -24,6 +25,7 @@ extension UserDTO {
     self.profileImageURL = entity.profileImageURL
     self.createdAt = entity.createdAt
     self.updatedAt = entity.updatedAt
+    self.favoriteCategory = QuizCategory(rawValue: entity.favoriteCategory ?? "all") ?? .all
     self.totalStagesCompleted = entity.totalStagesCompleted
     self.totalStars = entity.totalStars
     self.currentStreak = entity.currentStreak
@@ -41,6 +43,7 @@ extension UserDTO {
     profileImageURL: nil,
     createdAt: Date(),
     updatedAt: Date(),
+    favoriteCategory: .all,
     totalStagesCompleted: 15,
     totalStars: 35,
     currentStreak: 3,

@@ -30,22 +30,3 @@ struct UserUpdateRequest: Codable, Sendable, Equatable {
     self.favoriteCategory = favoriteCategory
   }
 }
-
-struct UserStatsUpdateRequest: Codable, Sendable, Equatable {
-  let totalQuizzesTaken: Int?
-  let totalCorrectAnswers: Int?
-  let currentStreak: Int?
-  let bestStreak: Int?
-  
-  init(
-    totalQuizzesTaken: Int? = nil,
-    totalCorrectAnswers: Int? = nil,
-    currentStreak: Int? = nil,
-    bestStreak: Int? = nil
-  ) {
-    self.totalQuizzesTaken = totalQuizzesTaken
-    self.totalCorrectAnswers = totalCorrectAnswers
-    self.currentStreak = currentStreak
-    self.bestStreak = bestStreak
-  }
-}

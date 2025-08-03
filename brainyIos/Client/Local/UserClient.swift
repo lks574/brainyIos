@@ -6,7 +6,6 @@ struct UserClient {
   var fetchUsers: @Sendable () async throws -> [UserDTO]
   var fetchUser: @Sendable (String) async throws -> UserDTO?
   var updateUser: @Sendable (String, UserUpdateRequest) async throws -> UserDTO?
-  var updateUserStats: @Sendable (String, UserStatsUpdateRequest) async throws -> UserDTO?
   var deleteUser: @Sendable (String) async throws -> Bool
   var getCurrentUser: @Sendable () async throws -> UserDTO?
 }
@@ -26,9 +25,6 @@ extension UserClient: DependencyKey {
       },
       updateUser: { id, req in
         try repository.updateUser(id: id, with: req)
-      },
-      updateUserStats: { id, req in
-        try repository.updateUserStats(id: id, with: req)
       },
       deleteUser: { id in
         try repository.deleteUser(id: id)
@@ -54,7 +50,6 @@ extension UserClient {
     fetchUsers: { [.mock] },
     fetchUser: { _ in .mock },
     updateUser: { _, _ in .mock },
-    updateUserStats: { _, _ in .mock },
     deleteUser: { _ in true },
     getCurrentUser: { .mock }
   )

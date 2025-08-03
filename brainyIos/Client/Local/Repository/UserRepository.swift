@@ -55,32 +55,7 @@ final class UserRepository {
       user.profileImageURL = profileImageURL
     }
     if let favoriteCategory = req.favoriteCategory {
-      user.favoriteCategory = favoriteCategory
-    }
-
-    user.updateTimestamp()
-    try dataManager.save()
-    return UserDTO(from: user)
-  }
-
-  func updateUserStats(id: String, with req: UserStatsUpdateRequest) throws -> UserDTO? {
-    let predicate = #Predicate<UserEntity> { user in
-      user.id == id
-    }
-    let descriptor = FetchDescriptor<UserEntity>(predicate: predicate)
-    guard let user = try modelContext.fetch(descriptor).first else { return nil }
-
-    if let totalQuizzesTaken = req.totalQuizzesTaken {
-      user.totalQuizzesTaken = totalQuizzesTaken
-    }
-    if let totalCorrectAnswers = req.totalCorrectAnswers {
-      user.totalCorrectAnswers = totalCorrectAnswers
-    }
-    if let currentStreak = req.currentStreak {
-      user.currentStreak = currentStreak
-    }
-    if let bestStreak = req.bestStreak {
-      user.bestStreak = bestStreak
+      user.favoriteCategory = favoriteCategory.rawValue
     }
 
     user.updateTimestamp()

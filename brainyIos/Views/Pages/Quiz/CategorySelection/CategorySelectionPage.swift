@@ -39,9 +39,9 @@ extension CategorySelectionPage {
         .font(.brainyTitle)
         .foregroundColor(.brainyText)
 
-      Text("퀴즈 모드: \(store.selectedPlayMode.rawValue)")
-        .font(.brainyBodyMedium)
-        .foregroundColor(.brainyTextSecondary)
+//      Text("퀴즈 모드: \(store.selectedPlayMode.rawValue)")
+//        .font(.brainyBodyMedium)
+//        .foregroundColor(.brainyTextSecondary)
     }
     .padding(.horizontal, 24)
     .padding(.top, 16)
@@ -53,49 +53,49 @@ extension CategorySelectionPage {
         .font(.brainyHeadlineSmall)
         .foregroundColor(.brainyText)
 
-      HStack(spacing: 12) {
-        CategorySelectionPlayModeToggle(
-          title: QuizMode.practice.rawValue,
-          description: "기록 안남아요",
-          icon: "pencil",
-          mode: .practice,
-          isSelected: store.selectedPlayMode == .practice
-        ) {
-          store.send(.changePlayMode(.practice))
-        }
-
-        CategorySelectionPlayModeToggle(
-          title: QuizMode.timed.rawValue,
-          description: "시간 제한",
-          icon: "stopwatch",
-          mode: .timed,
-          isSelected: store.selectedPlayMode == .timed
-        ) {
-          store.send(.changePlayMode(.timed))
-        }
-      }
-
-      HStack(spacing: 12) {
-        CategorySelectionPlayModeToggle(
-          title: QuizMode.challenge.rawValue,
-          description: "독립적 풀이",
-          icon: "trophy",
-          mode: .challenge,
-          isSelected: store.selectedPlayMode == .challenge
-        ) {
-          store.send(.changePlayMode(.challenge))
-        }
-
-        CategorySelectionPlayModeToggle(
-          title: QuizMode.stage.rawValue,
-          description: "순차적 진행",
-          icon: "target",
-          mode: .stage,
-          isSelected: store.selectedPlayMode == .stage
-        ) {
-          store.send(.changePlayMode(.stage))
-        }
-      }
+//      HStack(spacing: 12) {
+//        CategorySelectionPlayModeToggle(
+//          title: QuizMode.practice.rawValue,
+//          description: "기록 안남아요",
+//          icon: "pencil",
+//          mode: .practice,
+//          isSelected: store.selectedPlayMode == .practice
+//        ) {
+//          store.send(.changePlayMode(.practice))
+//        }
+//
+//        CategorySelectionPlayModeToggle(
+//          title: QuizMode.timed.rawValue,
+//          description: "시간 제한",
+//          icon: "stopwatch",
+//          mode: .timed,
+//          isSelected: store.selectedPlayMode == .timed
+//        ) {
+//          store.send(.changePlayMode(.timed))
+//        }
+//      }
+//
+//      HStack(spacing: 12) {
+//        CategorySelectionPlayModeToggle(
+//          title: QuizMode.challenge.rawValue,
+//          description: "독립적 풀이",
+//          icon: "trophy",
+//          mode: .challenge,
+//          isSelected: store.selectedPlayMode == .challenge
+//        ) {
+//          store.send(.changePlayMode(.challenge))
+//        }
+//
+//        CategorySelectionPlayModeToggle(
+//          title: QuizMode.stage.rawValue,
+//          description: "순차적 진행",
+//          icon: "target",
+//          mode: .stage,
+//          isSelected: store.selectedPlayMode == .stage
+//        ) {
+//          store.send(.changePlayMode(.stage))
+//        }
+//      }
     }
   }
 

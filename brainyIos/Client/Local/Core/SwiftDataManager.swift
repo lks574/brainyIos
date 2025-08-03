@@ -13,8 +13,8 @@ final class SwiftDataManager: ObservableObject {
       let schema = Schema([
         UserEntity.self,
         QuizQuestionEntity.self,
-        QuizSessionEntity.self,
-        QuizResultEntity.self
+        QuizStageEntity.self,
+        QuizStageResultEntity.self
       ])
 
       let modelConfiguration = ModelConfiguration(
