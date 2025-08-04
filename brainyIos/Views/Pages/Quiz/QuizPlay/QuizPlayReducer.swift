@@ -138,16 +138,16 @@ struct QuizPlayReducer {
       case .getStageQuestions:
         state.isLoading = true
         state.errorMessage = nil
-        return .none
-//        return .run { [stageId = state.stageId] send in
-//          do {
-//            // 스테이지별 문제 로드
-//            let questions = try await quizClient.fetchStageQuestions(stageId: stageId)
-//            await send(.stageQuestionsLoaded(questions))
-//          } catch {
-//            await send(.stageQuestionsLoadFailed(error.localizedDescription))
-//          }
-//        }
+        
+        return .run { [stageId = state.stageId] send in
+          do {
+            // 스테이지별 문제 로드
+            let questions = try await quizClient.fetchQuestionsForStage(stageId)
+            await send(.stageQuestionsLoaded(questions))
+          } catch {
+            await send(.stageQuestionsLoadFailed(error.localizedDescription))
+          }
+        }
         
       case .stageQuestionsLoaded(let questions):
         state.isLoading = false

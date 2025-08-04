@@ -21,66 +21,49 @@ final class QuizRepository {
     }
 
     print("Loading initial quiz data...")
-    let initialQuestions = QuizDataLoader.loadInitialQuizData()
+    let (stages, questions) = QuizDataLoader.loadInitialQuizData()
     
-    // Create stages and questions
-    try createInitialStagesAndQuestions(from: initialQuestions)
+    // Create stages first
+    try createStagesFromJSON(stages)
+    
+    // Then create questions
+    try createQuestionsFromJSON(questions)
     
     try dataManager.save()
-    print("Successfully loaded initial quiz data with stages")
+    print("Successfully loaded initial quiz data: \(stages.count) stages, \(questions.count) questions")
   }
   
-  private func createInitialStagesAndQuestions(from questions: [CreateQuizQuestionRequest]) throws {
-    // Group questions by category and difficulty
-    let groupedQuestions = Dictionary(grouping: questions) { question in
-      "\(question.category.rawValue)_\(question.difficulty.rawValue)"
+  private func createStagesFromJSON(_ stages: [CreateQuizStageRequest]) throws {
+    for stageRequest in stages {
+      let stage = QuizStageEntity(
+        id: stageRequest.id,
+        stageNumber: stageRequest.stageNumber,
+        category: stageRequest.category,
+        difficulty: stageRequest.difficulty,
+        title: stageRequest.title
+      )
+      stage.requiredAccuracy = stageRequest.requiredAccuracy
+      stage.totalQuestions = stageRequest.totalQuestions
+      
+      modelContext.insert(stage)
     }
-    
-    for (key, categoryQuestions) in groupedQuestions {
-      let components = key.split(separator: "_")
-      guard components.count == 2,
-            let category = QuizCategory(rawValue: String(components[0])),
-            let difficulty = QuizDifficulty(rawValue: String(components[1])) else {
-        continue
-      }
-      
-      // Create stages (10 questions per stage)
-      let questionsPerStage = 10
-      let stageCount = (categoryQuestions.count + questionsPerStage - 1) / questionsPerStage
-      
-      for stageIndex in 0..<stageCount {
-        let stageNumber = stageIndex + 1
-        let stageId = "\(category.rawValue)_stage_\(stageNumber)"
-        
-        let stage = QuizStageEntity(
-          id: stageId,
-          stageNumber: stageNumber,
-          category: category,
-          difficulty: difficulty,
-          title: "\(category.displayName) \(stageNumber)단계"
-        )
-        modelContext.insert(stage)
-        
-        // Add questions to this stage
-        let startIndex = stageIndex * questionsPerStage
-        let endIndex = min(startIndex + questionsPerStage, categoryQuestions.count)
-        
-        for (questionIndex, questionRequest) in categoryQuestions[startIndex..<endIndex].enumerated() {
-          let question = QuizQuestionEntity(
-            id: UUID().uuidString,
-            question: questionRequest.question,
-            correctAnswer: questionRequest.correctAnswer,
-            category: questionRequest.category,
-            difficulty: questionRequest.difficulty,
-            type: questionRequest.type,
-            options: questionRequest.options,
-            audioURL: questionRequest.audioURL,
-            stageId: stageId,
-            orderInStage: questionIndex + 1
-          )
-          modelContext.insert(question)
-        }
-      }
+  }
+  
+  private func createQuestionsFromJSON(_ questions: [CreateQuizQuestionRequest]) throws {
+    for questionRequest in questions {
+      let question = QuizQuestionEntity(
+        id: questionRequest.id,
+        question: questionRequest.question,
+        correctAnswer: questionRequest.correctAnswer,
+        category: questionRequest.category,
+        difficulty: questionRequest.difficulty,
+        type: questionRequest.type,
+        options: questionRequest.options,
+        audioURL: questionRequest.audioURL,
+        stageId: questionRequest.stageId,
+        orderInStage: questionRequest.orderInStage
+      )
+      modelContext.insert(question)
     }
   }
 
@@ -108,14 +91,16 @@ final class QuizRepository {
 extension QuizRepository {
   func createQuestion(_ req: CreateQuizQuestionRequest) throws -> QuizQuestionDTO {
     let question = QuizQuestionEntity(
-      id: UUID().uuidString,
+      id: req.id.isEmpty ? UUID().uuidString : req.id,
       question: req.question,
       correctAnswer: req.correctAnswer,
       category: req.category,
       difficulty: req.difficulty,
       type: req.type,
       options: req.options,
-      audioURL: req.audioURL
+      audioURL: req.audioURL,
+      stageId: req.stageId,
+      orderInStage: req.orderInStage
     )
     modelContext.insert(question)
     try dataManager.save()

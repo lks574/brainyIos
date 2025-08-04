@@ -1,36 +1,65 @@
 import Foundation
 
 struct QuizDataLoader {
-  static func loadInitialQuizData() -> [CreateQuizQuestionRequest] {
+  static func loadInitialQuizData() -> (stages: [CreateQuizStageRequest], questions: [CreateQuizQuestionRequest]) {
     guard let url = Bundle.main.url(forResource: "quiz_data", withExtension: "json"),
           let data = try? Data(contentsOf: url) else {
       print("Failed to load quiz_data.json")
-      return []
+      return (stages: [], questions: [])
     }
 
     do {
       let quizData = try JSONDecoder().decode(QuizDataResponse.self, from: data)
-      return quizData.questions.map { question in
+      
+      let stages = quizData.stages.map { stage in
+        CreateQuizStageRequest(
+          id: stage.id,
+          stageNumber: stage.stageNumber,
+          category: QuizCategory(rawValue: stage.category) ?? .general,
+          difficulty: QuizDifficulty(rawValue: stage.difficulty) ?? .easy,
+          title: stage.title,
+          requiredAccuracy: stage.requiredAccuracy,
+          totalQuestions: stage.totalQuestions
+        )
+      }
+      
+      let questions = quizData.questions.map { question in
         CreateQuizQuestionRequest(
+          id: question.id,
           question: question.question,
           correctAnswer: question.correctAnswer,
           category: QuizCategory(rawValue: question.category) ?? .general,
           difficulty: QuizDifficulty(rawValue: question.difficulty) ?? .easy,
           type: QuizType(rawValue: question.type) ?? .multipleChoice,
           options: question.options,
-          audioURL: question.audioURL
+          audioURL: question.audioURL,
+          stageId: question.stageId,
+          orderInStage: question.orderInStage
         )
       }
+      
+      return (stages: stages, questions: questions)
     } catch {
       print("Failed to decode quiz data: \(error)")
-      return []
+      return (stages: [], questions: [])
     }
   }
 }
 
 // MARK: - JSON Response Models
 private struct QuizDataResponse: Codable {
+  let stages: [QuizStageResponse]
   let questions: [QuizQuestionResponse]
+}
+
+private struct QuizStageResponse: Codable {
+  let id: String
+  let stageNumber: Int
+  let category: String
+  let difficulty: String
+  let title: String
+  let requiredAccuracy: Double
+  let totalQuestions: Int
 }
 
 private struct QuizQuestionResponse: Codable {
@@ -42,4 +71,6 @@ private struct QuizQuestionResponse: Codable {
   let difficulty: String
   let type: String
   let audioURL: String?
+  let stageId: String?
+  let orderInStage: Int?
 }

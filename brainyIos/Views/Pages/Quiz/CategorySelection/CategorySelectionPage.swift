@@ -11,9 +11,6 @@ struct CategorySelectionPage: View {
 
       ScrollView {
         VStack(spacing: 20) {
-          // 플레이 모드 선택 (스테이지 vs 개별)
-          playModeSection
-
           // 문제 필터 선택 (전체 무작위 vs 풀었던 것 제외)
           questionFilterSection
 
@@ -35,76 +32,16 @@ struct CategorySelectionPage: View {
 extension CategorySelectionPage {
   private var headerSection: some View {
     VStack(spacing: 12) {
-      Text("카테고리 선택")
+      Text("플레이 형식")
         .font(.brainyTitle)
         .foregroundColor(.brainyText)
-
-//      Text("퀴즈 모드: \(store.selectedPlayMode.rawValue)")
-//        .font(.brainyBodyMedium)
-//        .foregroundColor(.brainyTextSecondary)
     }
     .padding(.horizontal, 24)
     .padding(.top, 16)
   }
 
-  private var playModeSection: some View {
-    VStack(alignment: .leading, spacing: 12) {
-      Text("플레이 형식")
-        .font(.brainyHeadlineSmall)
-        .foregroundColor(.brainyText)
-
-//      HStack(spacing: 12) {
-//        CategorySelectionPlayModeToggle(
-//          title: QuizMode.practice.rawValue,
-//          description: "기록 안남아요",
-//          icon: "pencil",
-//          mode: .practice,
-//          isSelected: store.selectedPlayMode == .practice
-//        ) {
-//          store.send(.changePlayMode(.practice))
-//        }
-//
-//        CategorySelectionPlayModeToggle(
-//          title: QuizMode.timed.rawValue,
-//          description: "시간 제한",
-//          icon: "stopwatch",
-//          mode: .timed,
-//          isSelected: store.selectedPlayMode == .timed
-//        ) {
-//          store.send(.changePlayMode(.timed))
-//        }
-//      }
-//
-//      HStack(spacing: 12) {
-//        CategorySelectionPlayModeToggle(
-//          title: QuizMode.challenge.rawValue,
-//          description: "독립적 풀이",
-//          icon: "trophy",
-//          mode: .challenge,
-//          isSelected: store.selectedPlayMode == .challenge
-//        ) {
-//          store.send(.changePlayMode(.challenge))
-//        }
-//
-//        CategorySelectionPlayModeToggle(
-//          title: QuizMode.stage.rawValue,
-//          description: "순차적 진행",
-//          icon: "target",
-//          mode: .stage,
-//          isSelected: store.selectedPlayMode == .stage
-//        ) {
-//          store.send(.changePlayMode(.stage))
-//        }
-//      }
-    }
-  }
-
   private var questionFilterSection: some View {
     VStack(alignment: .leading, spacing: 12) {
-      Text("문제 선택")
-        .font(.brainyHeadlineSmall)
-        .foregroundColor(.brainyText)
-
       VStack(spacing: 8) {
         CategorySelectionQuestionFilterOption(
           title: "전체 무작위",
@@ -161,10 +98,6 @@ extension CategorySelectionPage {
         isEnabled: store.selectedCategory != nil
       ) {
         store.send(.goToQuizPlay)
-//        if let category = store.selectedCategory {
-          // TODO: 라우팅
-          // coordinator.navigateToQuizPlay(category: category, mode: selectedPlayMode, type: quizType)
-//        }
       }
 
       // 뒤로 가기 버튼

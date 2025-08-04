@@ -1,6 +1,7 @@
 import Foundation
 
 struct CreateQuizQuestionRequest: Codable, Sendable, Equatable {
+  let id: String
   let question: String
   let correctAnswer: String
   let options: [String]?
@@ -8,16 +9,22 @@ struct CreateQuizQuestionRequest: Codable, Sendable, Equatable {
   let difficulty: QuizDifficulty
   let type: QuizType
   let audioURL: String?
+  let stageId: String?
+  let orderInStage: Int?
   
   init(
+    id: String,
     question: String,
     correctAnswer: String,
     category: QuizCategory,
     difficulty: QuizDifficulty,
     type: QuizType,
     options: [String]? = nil,
-    audioURL: String? = nil
+    audioURL: String? = nil,
+    stageId: String? = nil,
+    orderInStage: Int? = nil
   ) {
+    self.id = id
     self.question = question
     self.correctAnswer = correctAnswer
     self.options = options
@@ -25,6 +32,8 @@ struct CreateQuizQuestionRequest: Codable, Sendable, Equatable {
     self.difficulty = difficulty
     self.type = type
     self.audioURL = audioURL
+    self.stageId = stageId
+    self.orderInStage = orderInStage
   }
 }
 

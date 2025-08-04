@@ -1,6 +1,7 @@
 import Foundation
 
 struct CreateQuizStageRequest: Codable, Sendable, Equatable {
+  let id: String
   let stageNumber: Int
   let category: QuizCategory
   let difficulty: QuizDifficulty
@@ -9,6 +10,7 @@ struct CreateQuizStageRequest: Codable, Sendable, Equatable {
   let totalQuestions: Int
   
   init(
+    id: String,
     stageNumber: Int,
     category: QuizCategory,
     difficulty: QuizDifficulty,
@@ -16,6 +18,7 @@ struct CreateQuizStageRequest: Codable, Sendable, Equatable {
     requiredAccuracy: Double = 0.7,
     totalQuestions: Int = 10
   ) {
+    self.id = id
     self.stageNumber = stageNumber
     self.category = category
     self.difficulty = difficulty
