@@ -37,7 +37,8 @@ struct QuizDataLoader {
           orderInStage: question.orderInStage
         )
       }
-      
+      print("stages", stages)
+      print("questions", questions)
       return (stages: stages, questions: questions)
     } catch {
       print("Failed to decode quiz data: \(error)")

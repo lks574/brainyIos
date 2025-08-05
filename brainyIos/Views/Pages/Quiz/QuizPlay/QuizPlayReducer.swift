@@ -30,8 +30,7 @@ struct QuizPlayReducer {
         switch question.type {
         case .multipleChoice:
           return selectedOptionIndex != nil
-        case .shortAnswer:
-          return !shortAnswerText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+
         case .voice, .ai:
           return !shortAnswerText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         }
@@ -182,7 +181,7 @@ struct QuizPlayReducer {
             selectedIndex < options.count else { return false }
       return options[selectedIndex] == question.correctAnswer
 
-    case .shortAnswer, .voice, .ai:
+    case .voice, .ai:
       let userAnswer = shortAnswer.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
       let correctAnswer = question.correctAnswer.lowercased()
       return userAnswer == correctAnswer

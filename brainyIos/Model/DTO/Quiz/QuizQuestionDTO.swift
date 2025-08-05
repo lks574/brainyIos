@@ -62,10 +62,10 @@ extension [QuizQuestionDTO] {
       id: "question-2",
       question: "세종대왕이 만든 문자는 무엇인가요?",
       correctAnswer: "한글",
-      options: nil,
+      options: ["한글", "한자", "영어", "일본어"],
       category: .person,
       difficulty: .medium,
-      type: .shortAnswer,
+      type: .multipleChoice,
       audioURL: nil,
       stageId: "person_stage_2",
       orderInStage: 3

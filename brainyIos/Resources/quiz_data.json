@@ -93,7 +93,7 @@
       "options": null,
       "category": "general",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "general_stage_1",
       "orderInStage": 2
@@ -129,7 +129,7 @@
       "options": null,
       "category": "general",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "general_stage_1",
       "orderInStage": 5
@@ -177,7 +177,7 @@
       "options": null,
       "category": "general",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "general_stage_1",
       "orderInStage": 9
@@ -225,7 +225,7 @@
       "options": null,
       "category": "general",
       "difficulty": "medium",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "general_stage_2",
       "orderInStage": 3
@@ -285,7 +285,7 @@
       "options": null,
       "category": "general",
       "difficulty": "medium",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "general_stage_2",
       "orderInStage": 8
@@ -321,7 +321,7 @@
       "options": null,
       "category": "history",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "history_stage_1",
       "orderInStage": 1
@@ -345,7 +345,7 @@
       "options": null,
       "category": "history",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "history_stage_1",
       "orderInStage": 3
@@ -393,7 +393,7 @@
       "options": null,
       "category": "history",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "history_stage_1",
       "orderInStage": 7
@@ -465,7 +465,7 @@
       "options": null,
       "category": "music",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "music_stage_1",
       "orderInStage": 3
@@ -525,7 +525,7 @@
       "options": null,
       "category": "music",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "music_stage_1",
       "orderInStage": 8
@@ -645,7 +645,7 @@
       "options": null,
       "category": "food",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "food_stage_1",
       "orderInStage": 8
@@ -717,7 +717,7 @@
       "options": null,
       "category": "sports",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "sports_stage_1",
       "orderInStage": 4
@@ -765,7 +765,7 @@
       "options": null,
       "category": "sports",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "sports_stage_1",
       "orderInStage": 8
@@ -837,7 +837,7 @@
       "options": null,
       "category": "movie",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "movie_stage_1",
       "orderInStage": 4
@@ -885,7 +885,7 @@
       "options": null,
       "category": "movie",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "movie_stage_1",
       "orderInStage": 8
@@ -921,7 +921,7 @@
       "options": null,
       "category": "person",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "person_stage_1",
       "orderInStage": 1
@@ -957,7 +957,7 @@
       "options": null,
       "category": "person",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "person_stage_1",
       "orderInStage": 4
@@ -1005,7 +1005,7 @@
       "options": null,
       "category": "person",
       "difficulty": "easy",
-      "type": "shortAnswer",
+      "type": "multipleChoice",
       "audioURL": null,
       "stageId": "person_stage_1",
       "orderInStage": 8

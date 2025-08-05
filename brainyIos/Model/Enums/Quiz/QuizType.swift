@@ -3,14 +3,12 @@ import Foundation
 // MARK: - Quiz Type
 enum QuizType: String, Codable, CaseIterable, Sendable {
   case multipleChoice = "multipleChoice"
-  case shortAnswer = "shortAnswer"
   case voice
   case ai
 
   var displayName: String {
     return switch self {
     case .multipleChoice: "객관식"
-    case .shortAnswer: "주관식"
     case .voice: "음성모드"
     case .ai: "AI모드"
     }

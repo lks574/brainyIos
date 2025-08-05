@@ -45,18 +45,6 @@ struct QuizModeSelectionPage: View {
   // MARK: - Quiz Mode Section
   private var quizModeSection: some View {
     VStack(spacing: 16) {
-      // 주관식 퀴즈
-      QuizModeCard(
-        icon: "pencil.and.outline",
-        title: "주관식 퀴즈",
-        description: "직접 답을 입력하는 퀴즈",
-        quizType: .shortAnswer,
-        isSelected: store.selectedQuizType == .shortAnswer
-      ) {
-        store.send(.changeQuizType(.shortAnswer))
-        store.send(.goToCategory(.shortAnswer))
-      }
-
       // 객관식 퀴즈
       QuizModeCard(
         icon: "list.bullet.circle",

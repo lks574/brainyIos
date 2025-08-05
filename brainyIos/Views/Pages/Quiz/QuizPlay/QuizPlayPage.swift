@@ -23,7 +23,7 @@ struct QuizPlayPage: View {
     .background(Color.brainyBackground)
     .navigationBarHidden(true)
     .task {
-//      store.send(.getQuiz)
+      store.send(.startStage)
     }
   }
 }
@@ -184,7 +184,7 @@ extension QuizPlayPage {
           multipleChoiceView(question: question)
         case .voice:
           voiceQuizView(question: question)
-        case .shortAnswer, .ai:
+        case .ai:
           shortAnswerView
         }
       }
