@@ -46,4 +46,38 @@ final class QuizStageEntity {
       .filter { $0.userId == userId }
       .max { $0.score < $1.score }
   }
+  
+  /// 카테고리별 총 스테이지 수 계산 (정적 메서드)
+  static func getTotalStagesCount(for category: QuizCategory, in context: ModelContext) -> Int {
+    let descriptor = FetchDescriptor<QuizStageEntity>(
+      predicate: #Predicate { stage in
+        stage.category == category.rawValue
+      }
+    )
+    
+    do {
+      let stages = try context.fetch(descriptor)
+      return stages.count
+    } catch {
+      print("Error fetching total stages for category \(category): \(error)")
+      return 0
+    }
+  }
+  
+  /// 카테고리별 완료된 스테이지 수 계산 (정적 메서드)
+  static func getCompletedStagesCount(for category: QuizCategory, userId: String, in context: ModelContext) -> Int {
+    let descriptor = FetchDescriptor<QuizStageEntity>(
+      predicate: #Predicate { stage in
+        stage.category == category.rawValue
+      }
+    )
+    
+    do {
+      let stages = try context.fetch(descriptor)
+      return stages.filter { $0.isCompleted(by: userId) }.count
+    } catch {
+      print("Error fetching completed stages for category \(category): \(error)")
+      return 0
+    }
+  }
 }

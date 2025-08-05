@@ -26,6 +26,9 @@ struct CategorySelectionPage: View {
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color.brainyBackground)
     .navigationBarHidden(true)
+    .onAppear {
+      store.send(.loadCategoryProgress)
+    }
   }
 }
 
@@ -79,7 +82,8 @@ extension CategorySelectionPage {
         ForEach(QuizCategory.allCases, id: \.self) { category in
           CategorySelectionCategoryCard(
             category: category,
-            isSelected: store.selectedCategory == category
+            isSelected: store.selectedCategory == category,
+            progress: store.categoryProgress[category]
           ) {
             store.send(.changeCategory(category))
           }
