@@ -52,7 +52,7 @@ extension QuizStatsClient: DependencyKey {
       getUserCategoryStats: { userId in
         var categoryStats: [CategoryStats] = []
         
-        for category in QuizCategory.allCases.filter({ $0 != .all }) {
+        for category in QuizCategory.allCases {
           let stats = try await quizClient.getCategoryStageStats(userId, category)
           let stages = try await quizClient.fetchStagesByCategory(category)
           let results = try await quizClient.fetchStageResults(userId, nil, nil)
@@ -149,7 +149,7 @@ extension QuizStatsClient: DependencyKey {
       },
       
       getRecommendedStages: { userId in
-        let allCategories = QuizCategory.allCases.filter { $0 != .all }
+        let allCategories = QuizCategory.allCases
         var recommendations: [RecommendedStage] = []
         
         for category in allCategories {

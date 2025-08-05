@@ -25,7 +25,7 @@ extension UserDTO {
     self.profileImageURL = entity.profileImageURL
     self.createdAt = entity.createdAt
     self.updatedAt = entity.updatedAt
-    self.favoriteCategory = QuizCategory(rawValue: entity.favoriteCategory ?? "all") ?? .all
+    self.favoriteCategory = QuizCategory(rawValue: entity.favoriteCategory ?? "general") ?? .general
     self.totalStagesCompleted = entity.totalStagesCompleted
     self.totalStars = entity.totalStars
     self.currentStreak = entity.currentStreak
@@ -43,7 +43,7 @@ extension UserDTO {
     profileImageURL: nil,
     createdAt: Date(),
     updatedAt: Date(),
-    favoriteCategory: .all,
+    favoriteCategory: .general,
     totalStagesCompleted: 15,
     totalStars: 35,
     currentStreak: 3,

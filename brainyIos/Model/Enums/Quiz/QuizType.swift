@@ -28,7 +28,6 @@ enum QuizCategory: String, Codable, CaseIterable, Sendable {
   case food = "food"
   case sports = "sports"
   case movie = "movie"
-  case all = "all"
 
   var displayName: String {
     return switch self {
@@ -41,7 +40,6 @@ enum QuizCategory: String, Codable, CaseIterable, Sendable {
     case .food: "음식"
     case .sports: "스포츠"
     case .movie: "영화"
-    case .all: "전체"
     }
   }
 }
