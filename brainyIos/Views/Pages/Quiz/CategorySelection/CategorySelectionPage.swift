@@ -30,6 +30,17 @@ struct CategorySelectionPage: View {
       store.send(.loadCategoryProgress)
     }
   }
+  
+  private var canStartQuiz: Bool {
+    guard let selectedCategory = store.selectedCategory else { return false }
+    
+    // 선택된 카테고리의 진행도 확인
+    if let progress = store.categoryProgress[selectedCategory] {
+      return progress.totalStages > 0
+    }
+    
+    return false
+  }
 }
 
 extension CategorySelectionPage {
@@ -99,7 +110,7 @@ extension CategorySelectionPage {
         "퀴즈 시작",
         style: .primary,
         size: .large,
-        isEnabled: store.selectedCategory != nil
+        isEnabled: canStartQuiz
       ) {
         store.send(.goToQuizPlay)
       }

@@ -78,7 +78,12 @@
       "id": "q001",
       "question": "대한민국의 수도는 어디인가요?",
       "correctAnswer": "서울",
-      "options": ["서울", "부산", "대구", "인천"],
+      "options": [
+        "서울",
+        "부산",
+        "대구",
+        "인천"
+      ],
       "category": "general",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -90,7 +95,12 @@
       "id": "q002",
       "question": "한국의 전통 주거 형태는?",
       "correctAnswer": "한옥",
-      "options": null,
+      "options": [
+        "한옥",
+        "양옥",
+        "아파트",
+        "빌라"
+      ],
       "category": "general",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -102,7 +112,12 @@
       "id": "q003",
       "question": "한국의 전통 놀이 중 윷을 사용하는 놀이는?",
       "correctAnswer": "윷놀이",
-      "options": ["윷놀이", "제기차기", "팽이치기", "연날리기"],
+      "options": [
+        "윷놀이",
+        "제기차기",
+        "팽이치기",
+        "연날리기"
+      ],
       "category": "general",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -114,7 +129,12 @@
       "id": "q004",
       "question": "한국의 대표적인 IT 기업은?",
       "correctAnswer": "삼성",
-      "options": ["삼성", "LG", "SK", "현대"],
+      "options": [
+        "삼성",
+        "LG",
+        "SK",
+        "현대"
+      ],
       "category": "general",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -126,7 +146,12 @@
       "id": "q005",
       "question": "한국의 전통 의상은?",
       "correctAnswer": "한복",
-      "options": null,
+      "options": [
+        "한복",
+        "기모노",
+        "치파오",
+        "사리"
+      ],
       "category": "general",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -138,7 +163,12 @@
       "id": "q006",
       "question": "한국의 화폐 단위는?",
       "correctAnswer": "원",
-      "options": ["원", "달러", "엔", "위안"],
+      "options": [
+        "원",
+        "달러",
+        "엔",
+        "위안"
+      ],
       "category": "general",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -150,7 +180,12 @@
       "id": "q007",
       "question": "한국의 국화는?",
       "correctAnswer": "무궁화",
-      "options": ["무궁화", "장미", "국화", "벚꽃"],
+      "options": [
+        "무궁화",
+        "장미",
+        "국화",
+        "벚꽃"
+      ],
       "category": "general",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -162,7 +197,12 @@
       "id": "q008",
       "question": "한국의 국조는?",
       "correctAnswer": "까치",
-      "options": ["까치", "독수리", "학", "비둘기"],
+      "options": [
+        "까치",
+        "독수리",
+        "학",
+        "비둘기"
+      ],
       "category": "general",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -174,7 +214,12 @@
       "id": "q009",
       "question": "한국의 전통 문자는?",
       "correctAnswer": "한글",
-      "options": null,
+      "options": [
+        "한글",
+        "한자",
+        "히라가나",
+        "알파벳"
+      ],
       "category": "general",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -186,7 +231,12 @@
       "id": "q010",
       "question": "한국의 면적은 약 몇 만 제곱킬로미터인가?",
       "correctAnswer": "10만",
-      "options": ["10만", "20만", "30만", "40만"],
+      "options": [
+        "10만",
+        "20만",
+        "30만",
+        "40만"
+      ],
       "category": "general",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -198,7 +248,12 @@
       "id": "q011",
       "question": "태극기의 중앙에 있는 원형 문양의 이름은?",
       "correctAnswer": "태극",
-      "options": ["태극", "팔괘", "음양", "오행"],
+      "options": [
+        "태극",
+        "팔괘",
+        "음양",
+        "오행"
+      ],
       "category": "general",
       "difficulty": "medium",
       "type": "multipleChoice",
@@ -210,7 +265,12 @@
       "id": "q012",
       "question": "한국의 최고봉은?",
       "correctAnswer": "백두산",
-      "options": ["백두산", "한라산", "지리산", "설악산"],
+      "options": [
+        "백두산",
+        "한라산",
+        "지리산",
+        "설악산"
+      ],
       "category": "general",
       "difficulty": "medium",
       "type": "multipleChoice",
@@ -222,7 +282,12 @@
       "id": "q013",
       "question": "한국의 3대 하천은?",
       "correctAnswer": "한강, 낙동강, 금강",
-      "options": null,
+      "options": [
+        "한강, 낙동강, 금강",
+        "한강, 낙동강, 영산강",
+        "한강, 금강, 섬진강",
+        "낙동강, 금강, 영산강"
+      ],
       "category": "general",
       "difficulty": "medium",
       "type": "multipleChoice",
@@ -234,7 +299,12 @@
       "id": "q014",
       "question": "한국의 행정구역은 몇 개 도로 나뉘어져 있나?",
       "correctAnswer": "9개",
-      "options": ["8개", "9개", "10개", "11개"],
+      "options": [
+        "8개",
+        "9개",
+        "10개",
+        "11개"
+      ],
       "category": "general",
       "difficulty": "medium",
       "type": "multipleChoice",
@@ -246,7 +316,12 @@
       "id": "q015",
       "question": "한국의 대표적인 섬은?",
       "correctAnswer": "제주도",
-      "options": ["제주도", "울릉도", "독도", "강화도"],
+      "options": [
+        "제주도",
+        "울릉도",
+        "독도",
+        "강화도"
+      ],
       "category": "general",
       "difficulty": "medium",
       "type": "multipleChoice",
@@ -258,7 +333,12 @@
       "id": "q016",
       "question": "한국의 시간대는 UTC 기준 몇 시간인가?",
       "correctAnswer": "+9",
-      "options": ["+8", "+9", "+10", "+11"],
+      "options": [
+        "+8",
+        "+9",
+        "+10",
+        "+11"
+      ],
       "category": "general",
       "difficulty": "medium",
       "type": "multipleChoice",
@@ -270,7 +350,12 @@
       "id": "q017",
       "question": "한국의 인구는 약 몇 천만 명인가?",
       "correctAnswer": "5천만",
-      "options": ["4천만", "5천만", "6천만", "7천만"],
+      "options": [
+        "4천만",
+        "5천만",
+        "6천만",
+        "7천만"
+      ],
       "category": "general",
       "difficulty": "medium",
       "type": "multipleChoice",
@@ -282,7 +367,12 @@
       "id": "q018",
       "question": "한국의 대표적인 반도는?",
       "correctAnswer": "한반도",
-      "options": null,
+      "options": [
+        "한반도",
+        "인도차이나반도",
+        "이베리아반도",
+        "발칸반도"
+      ],
       "category": "general",
       "difficulty": "medium",
       "type": "multipleChoice",
@@ -294,7 +384,12 @@
       "id": "q019",
       "question": "한국의 국경을 접하고 있는 나라는?",
       "correctAnswer": "북한",
-      "options": ["북한", "중국", "일본", "러시아"],
+      "options": [
+        "북한",
+        "중국",
+        "일본",
+        "러시아"
+      ],
       "category": "general",
       "difficulty": "medium",
       "type": "multipleChoice",
@@ -306,7 +401,12 @@
       "id": "q020",
       "question": "한국의 기후는?",
       "correctAnswer": "온대기후",
-      "options": ["열대기후", "온대기후", "한대기후", "건조기후"],
+      "options": [
+        "열대기후",
+        "온대기후",
+        "한대기후",
+        "건조기후"
+      ],
       "category": "general",
       "difficulty": "medium",
       "type": "multipleChoice",
@@ -318,7 +418,12 @@
       "id": "q021",
       "question": "조선시대 최고의 교육기관은?",
       "correctAnswer": "성균관",
-      "options": null,
+      "options": [
+        "성균관",
+        "향교",
+        "서원",
+        "서당"
+      ],
       "category": "history",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -330,7 +435,12 @@
       "id": "q022",
       "question": "한국 전쟁이 일어난 연도는?",
       "correctAnswer": "1950년",
-      "options": ["1948년", "1950년", "1953년", "1945년"],
+      "options": [
+        "1948년",
+        "1950년",
+        "1953년",
+        "1945년"
+      ],
       "category": "history",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -342,7 +452,12 @@
       "id": "q023",
       "question": "조선 왕조의 창건자는?",
       "correctAnswer": "이성계",
-      "options": null,
+      "options": [
+        "이성계",
+        "왕건",
+        "견훤",
+        "궁예"
+      ],
       "category": "history",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -354,7 +469,12 @@
       "id": "q024",
       "question": "광복절은 언제인가?",
       "correctAnswer": "8월 15일",
-      "options": ["8월 15일", "3월 1일", "10월 3일", "6월 6일"],
+      "options": [
+        "8월 15일",
+        "3월 1일",
+        "10월 3일",
+        "6월 6일"
+      ],
       "category": "history",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -366,7 +486,12 @@
       "id": "q025",
       "question": "삼국통일을 이룬 나라는?",
       "correctAnswer": "신라",
-      "options": ["고구려", "백제", "신라", "가야"],
+      "options": [
+        "고구려",
+        "백제",
+        "신라",
+        "가야"
+      ],
       "category": "history",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -378,7 +503,12 @@
       "id": "q026",
       "question": "임진왜란이 일어난 연도는?",
       "correctAnswer": "1592년",
-      "options": ["1592년", "1597년", "1598년", "1590년"],
+      "options": [
+        "1592년",
+        "1597년",
+        "1598년",
+        "1590년"
+      ],
       "category": "history",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -390,7 +520,12 @@
       "id": "q027",
       "question": "한국의 독립운동가 중 안중근이 저격한 인물은?",
       "correctAnswer": "이토 히로부미",
-      "options": null,
+      "options": [
+        "이토 히로부미",
+        "야마모토",
+        "도조 히데키",
+        "메이지천황"
+      ],
       "category": "history",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -402,7 +537,12 @@
       "id": "q028",
       "question": "3.1운동이 일어난 연도는?",
       "correctAnswer": "1919년",
-      "options": ["1918년", "1919년", "1920년", "1921년"],
+      "options": [
+        "1918년",
+        "1919년",
+        "1920년",
+        "1921년"
+      ],
       "category": "history",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -414,7 +554,12 @@
       "id": "q029",
       "question": "고구려의 건국자는?",
       "correctAnswer": "주몽",
-      "options": ["주몽", "온조", "박혁거세", "김수로"],
+      "options": [
+        "주몽",
+        "온조",
+        "박혁거세",
+        "김수로"
+      ],
       "category": "history",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -426,7 +571,12 @@
       "id": "q030",
       "question": "조선시대 과거제도의 최고 시험은?",
       "correctAnswer": "대과",
-      "options": ["소과", "대과", "무과", "잡과"],
+      "options": [
+        "소과",
+        "대과",
+        "무과",
+        "잡과"
+      ],
       "category": "history",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -438,7 +588,12 @@
       "id": "q031",
       "question": "BTS의 리더는 누구인가요?",
       "correctAnswer": "RM",
-      "options": ["RM", "진", "슈가", "제이홉"],
+      "options": [
+        "RM",
+        "진",
+        "슈가",
+        "제이홉"
+      ],
       "category": "music",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -450,7 +605,12 @@
       "id": "q032",
       "question": "한국의 전통 악기 중 현악기는?",
       "correctAnswer": "가야금",
-      "options": ["가야금", "장구", "꽹과리", "북"],
+      "options": [
+        "가야금",
+        "장구",
+        "꽹과리",
+        "북"
+      ],
       "category": "music",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -462,7 +622,12 @@
       "id": "q033",
       "question": "한국 전통 음악의 대표적인 장르는?",
       "correctAnswer": "판소리",
-      "options": null,
+      "options": [
+        "판소리",
+        "가곡",
+        "민요",
+        "정가"
+      ],
       "category": "music",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -474,7 +639,12 @@
       "id": "q034",
       "question": "한국의 대표적인 K-POP 걸그룹은?",
       "correctAnswer": "블랙핑크",
-      "options": ["블랙핑크", "트와이스", "레드벨벳", "에스파"],
+      "options": [
+        "블랙핑크",
+        "트와이스",
+        "레드벨벳",
+        "에스파"
+      ],
       "category": "music",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -486,7 +656,12 @@
       "id": "q035",
       "question": "한국의 전통 타악기는?",
       "correctAnswer": "장구",
-      "options": ["장구", "가야금", "거문고", "대금"],
+      "options": [
+        "장구",
+        "가야금",
+        "거문고",
+        "대금"
+      ],
       "category": "music",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -498,7 +673,12 @@
       "id": "q036",
       "question": "한국의 전통 관악기는?",
       "correctAnswer": "대금",
-      "options": ["대금", "장구", "가야금", "거문고"],
+      "options": [
+        "대금",
+        "장구",
+        "가야금",
+        "거문고"
+      ],
       "category": "music",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -510,7 +690,12 @@
       "id": "q037",
       "question": "한국의 전통 춤은?",
       "correctAnswer": "부채춤",
-      "options": ["부채춤", "왈츠", "탱고", "살사"],
+      "options": [
+        "부채춤",
+        "왈츠",
+        "탱고",
+        "살사"
+      ],
       "category": "music",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -522,7 +707,12 @@
       "id": "q038",
       "question": "한국의 전통 성악은?",
       "correctAnswer": "가곡",
-      "options": null,
+      "options": [
+        "가곡",
+        "판소리",
+        "민요",
+        "시조"
+      ],
       "category": "music",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -534,7 +724,12 @@
       "id": "q039",
       "question": "한국의 전통 음계는?",
       "correctAnswer": "5음계",
-      "options": ["5음계", "7음계", "12음계", "24음계"],
+      "options": [
+        "5음계",
+        "7음계",
+        "12음계",
+        "24음계"
+      ],
       "category": "music",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -546,7 +741,12 @@
       "id": "q040",
       "question": "한국의 전통 음악 장단은?",
       "correctAnswer": "굿거리",
-      "options": ["굿거리", "왈츠", "탱고", "룸바"],
+      "options": [
+        "굿거리",
+        "왈츠",
+        "탱고",
+        "룸바"
+      ],
       "category": "music",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -558,7 +758,12 @@
       "id": "q041",
       "question": "한국의 전통 음식 중 발효 채소 요리는?",
       "correctAnswer": "김치",
-      "options": ["김치", "불고기", "비빔밥", "냉면"],
+      "options": [
+        "김치",
+        "불고기",
+        "비빔밥",
+        "냉면"
+      ],
       "category": "food",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -570,7 +775,12 @@
       "id": "q042",
       "question": "한국의 전통 차 중 보리로 만든 차는?",
       "correctAnswer": "보리차",
-      "options": ["보리차", "녹차", "홍차", "우롱차"],
+      "options": [
+        "보리차",
+        "녹차",
+        "홍차",
+        "우롱차"
+      ],
       "category": "food",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -582,7 +792,12 @@
       "id": "q043",
       "question": "한국의 대표적인 국물 요리는?",
       "correctAnswer": "김치찌개",
-      "options": ["김치찌개", "스파게티", "라멘", "우동"],
+      "options": [
+        "김치찌개",
+        "스파게티",
+        "라멘",
+        "우동"
+      ],
       "category": "food",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -594,7 +809,12 @@
       "id": "q044",
       "question": "한국의 전통 떡은?",
       "correctAnswer": "송편",
-      "options": ["송편", "모찌", "다이후쿠", "와라비모찌"],
+      "options": [
+        "송편",
+        "모찌",
+        "다이후쿠",
+        "와라비모찌"
+      ],
       "category": "food",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -606,7 +826,12 @@
       "id": "q045",
       "question": "한국의 전통 술은?",
       "correctAnswer": "막걸리",
-      "options": ["막걸리", "사케", "맥주", "와인"],
+      "options": [
+        "막걸리",
+        "사케",
+        "맥주",
+        "와인"
+      ],
       "category": "food",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -618,7 +843,12 @@
       "id": "q046",
       "question": "한국의 대표적인 면 요리는?",
       "correctAnswer": "냉면",
-      "options": ["냉면", "라멘", "우동", "소바"],
+      "options": [
+        "냉면",
+        "라멘",
+        "우동",
+        "소바"
+      ],
       "category": "food",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -630,7 +860,12 @@
       "id": "q047",
       "question": "한국의 전통 조미료는?",
       "correctAnswer": "고추장",
-      "options": ["고추장", "간장", "된장", "마요네즈"],
+      "options": [
+        "고추장",
+        "간장",
+        "된장",
+        "마요네즈"
+      ],
       "category": "food",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -642,7 +877,12 @@
       "id": "q048",
       "question": "한국의 전통 밥 요리는?",
       "correctAnswer": "비빔밥",
-      "options": null,
+      "options": [
+        "비빔밥",
+        "볶음밥",
+        "덮밥",
+        "주먹밥"
+      ],
       "category": "food",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -654,7 +894,12 @@
       "id": "q049",
       "question": "한국의 전통 국은?",
       "correctAnswer": "미역국",
-      "options": ["미역국", "된장국", "콩나물국", "북어국"],
+      "options": [
+        "미역국",
+        "된장국",
+        "콩나물국",
+        "북어국"
+      ],
       "category": "food",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -666,7 +911,12 @@
       "id": "q050",
       "question": "한국의 전통 반찬은?",
       "correctAnswer": "나물",
-      "options": ["나물", "샐러드", "피클", "올리브"],
+      "options": [
+        "나물",
+        "샐러드",
+        "피클",
+        "올리브"
+      ],
       "category": "food",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -678,7 +928,12 @@
       "id": "q051",
       "question": "한국의 대표적인 스포츠 선수 박세리가 활약한 종목은?",
       "correctAnswer": "골프",
-      "options": ["골프", "테니스", "배드민턴", "탁구"],
+      "options": [
+        "골프",
+        "테니스",
+        "배드민턴",
+        "탁구"
+      ],
       "category": "sports",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -690,7 +945,12 @@
       "id": "q052",
       "question": "한국의 전통 무예는?",
       "correctAnswer": "태권도",
-      "options": ["태권도", "가라테", "유도", "검도"],
+      "options": [
+        "태권도",
+        "가라테",
+        "유도",
+        "검도"
+      ],
       "category": "sports",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -702,7 +962,12 @@
       "id": "q053",
       "question": "한국의 대표적인 축구 선수는?",
       "correctAnswer": "손흥민",
-      "options": ["손흥민", "박지성", "차범근", "이천수"],
+      "options": [
+        "손흥민",
+        "박지성",
+        "차범근",
+        "이천수"
+      ],
       "category": "sports",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -714,7 +979,12 @@
       "id": "q054",
       "question": "한국의 전통 씨름은?",
       "correctAnswer": "씨름",
-      "options": null,
+      "options": [
+        "씨름",
+        "레슬링",
+        "유도",
+        "스모"
+      ],
       "category": "sports",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -726,7 +996,12 @@
       "id": "q055",
       "question": "한국의 대표적인 야구 선수는?",
       "correctAnswer": "박찬호",
-      "options": ["박찬호", "류현진", "김광현", "오승환"],
+      "options": [
+        "박찬호",
+        "류현진",
+        "김광현",
+        "오승환"
+      ],
       "category": "sports",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -738,7 +1013,12 @@
       "id": "q056",
       "question": "한국의 전통 활쏘기는?",
       "correctAnswer": "국궁",
-      "options": ["국궁", "양궁", "석궁", "활쏘기"],
+      "options": [
+        "국궁",
+        "양궁",
+        "석궁",
+        "활쏘기"
+      ],
       "category": "sports",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -750,7 +1030,12 @@
       "id": "q057",
       "question": "한국의 대표적인 피겨 선수는?",
       "correctAnswer": "김연아",
-      "options": ["김연아", "최다빈", "유영", "임은수"],
+      "options": [
+        "김연아",
+        "최다빈",
+        "유영",
+        "임은수"
+      ],
       "category": "sports",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -762,7 +1047,12 @@
       "id": "q058",
       "question": "한국의 전통 격투기는?",
       "correctAnswer": "택견",
-      "options": null,
+      "options": [
+        "택견",
+        "태권도",
+        "가라테",
+        "쿵푸"
+      ],
       "category": "sports",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -774,7 +1064,12 @@
       "id": "q059",
       "question": "한국의 대표적인 수영 선수는?",
       "correctAnswer": "박태환",
-      "options": ["박태환", "정다래", "김서영", "이재성"],
+      "options": [
+        "박태환",
+        "정다래",
+        "김서영",
+        "이재성"
+      ],
       "category": "sports",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -786,7 +1081,12 @@
       "id": "q060",
       "question": "한국의 전통 말타기는?",
       "correctAnswer": "마상무예",
-      "options": ["마상무예", "승마", "경마", "폴로"],
+      "options": [
+        "마상무예",
+        "승마",
+        "경마",
+        "폴로"
+      ],
       "category": "sports",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -798,7 +1098,12 @@
       "id": "q061",
       "question": "한국 영화 '기생충'의 감독은?",
       "correctAnswer": "봉준호",
-      "options": ["봉준호", "박찬욱", "김기덕", "이창동"],
+      "options": [
+        "봉준호",
+        "박찬욱",
+        "김기덕",
+        "이창동"
+      ],
       "category": "movie",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -810,7 +1115,12 @@
       "id": "q062",
       "question": "한국 드라마 '오징어 게임'이 인기를 끈 플랫폼은?",
       "correctAnswer": "넷플릭스",
-      "options": ["넷플릭스", "유튜브", "디즈니플러스", "아마존프라임"],
+      "options": [
+        "넷플릭스",
+        "유튜브",
+        "디즈니플러스",
+        "아마존프라임"
+      ],
       "category": "movie",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -822,7 +1132,12 @@
       "id": "q063",
       "question": "한국의 대표적인 영화 배우는?",
       "correctAnswer": "송강호",
-      "options": ["송강호", "이병헌", "최민식", "황정민"],
+      "options": [
+        "송강호",
+        "이병헌",
+        "최민식",
+        "황정민"
+      ],
       "category": "movie",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -834,7 +1149,12 @@
       "id": "q064",
       "question": "한국의 대표적인 여배우는?",
       "correctAnswer": "전지현",
-      "options": null,
+      "options": [
+        "전지현",
+        "김태희",
+        "송혜교",
+        "한가인"
+      ],
       "category": "movie",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -846,7 +1166,12 @@
       "id": "q065",
       "question": "한국의 대표적인 액션 영화는?",
       "correctAnswer": "올드보이",
-      "options": ["올드보이", "아바타", "어벤져스", "스파이더맨"],
+      "options": [
+        "올드보이",
+        "아바타",
+        "어벤져스",
+        "스파이더맨"
+      ],
       "category": "movie",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -858,7 +1183,12 @@
       "id": "q066",
       "question": "한국의 대표적인 로맨스 영화는?",
       "correctAnswer": "엽기적인 그녀",
-      "options": ["엽기적인 그녀", "타이타닉", "노트북", "라라랜드"],
+      "options": [
+        "엽기적인 그녀",
+        "타이타닉",
+        "노트북",
+        "라라랜드"
+      ],
       "category": "movie",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -870,7 +1200,12 @@
       "id": "q067",
       "question": "한국의 대표적인 코미디 영화는?",
       "correctAnswer": "극한직업",
-      "options": ["극한직업", "어벤져스", "스파이더맨", "배트맨"],
+      "options": [
+        "극한직업",
+        "어벤져스",
+        "스파이더맨",
+        "배트맨"
+      ],
       "category": "movie",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -882,7 +1217,12 @@
       "id": "q068",
       "question": "한국의 대표적인 스릴러 영화는?",
       "correctAnswer": "살인의 추억",
-      "options": null,
+      "options": [
+        "살인의 추억",
+        "추격자",
+        "황해",
+        "아저씨"
+      ],
       "category": "movie",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -894,7 +1234,12 @@
       "id": "q069",
       "question": "한국의 대표적인 드라마는?",
       "correctAnswer": "대장금",
-      "options": ["대장금", "프렌즈", "빅뱅이론", "게임오브쓰론"],
+      "options": [
+        "대장금",
+        "프렌즈",
+        "빅뱅이론",
+        "게임오브쓰론"
+      ],
       "category": "movie",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -906,7 +1251,12 @@
       "id": "q070",
       "question": "한국의 대표적인 애니메이션은?",
       "correctAnswer": "뽀로로",
-      "options": ["뽀로로", "도라에몽", "원피스", "나루토"],
+      "options": [
+        "뽀로로",
+        "도라에몽",
+        "원피스",
+        "나루토"
+      ],
       "category": "movie",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -918,7 +1268,12 @@
       "id": "q071",
       "question": "세종대왕이 창제한 문자는 무엇인가요?",
       "correctAnswer": "한글",
-      "options": null,
+      "options": [
+        "한글",
+        "한자",
+        "히라가나",
+        "가나"
+      ],
       "category": "person",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -930,7 +1285,12 @@
       "id": "q072",
       "question": "한국의 독립운동가 안중근이 저격한 인물은?",
       "correctAnswer": "이토 히로부미",
-      "options": ["이토 히로부미", "야마모토", "도조 히데키", "메이지천황"],
+      "options": [
+        "이토 히로부미",
+        "야마모토",
+        "도조 히데키",
+        "메이지천황"
+      ],
       "category": "person",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -942,7 +1302,12 @@
       "id": "q073",
       "question": "한국의 대표적인 시인은?",
       "correctAnswer": "윤동주",
-      "options": ["윤동주", "이상", "김소월", "정지용"],
+      "options": [
+        "윤동주",
+        "이상",
+        "김소월",
+        "정지용"
+      ],
       "category": "person",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -954,7 +1319,12 @@
       "id": "q074",
       "question": "한국의 대표적인 소설가는?",
       "correctAnswer": "이문열",
-      "options": null,
+      "options": [
+        "이문열",
+        "박경리",
+        "조정래",
+        "황석영"
+      ],
       "category": "person",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -966,7 +1336,12 @@
       "id": "q075",
       "question": "한국의 대표적인 화가는?",
       "correctAnswer": "김홍도",
-      "options": ["김홍도", "신윤복", "정선", "장승업"],
+      "options": [
+        "김홍도",
+        "신윤복",
+        "정선",
+        "장승업"
+      ],
       "category": "person",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -978,7 +1353,12 @@
       "id": "q076",
       "question": "한국의 대표적인 과학자는?",
       "correctAnswer": "장영실",
-      "options": ["장영실", "최무선", "이순신", "허준"],
+      "options": [
+        "장영실",
+        "최무선",
+        "이순신",
+        "허준"
+      ],
       "category": "person",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -990,7 +1370,12 @@
       "id": "q077",
       "question": "한국의 대표적인 의학자는?",
       "correctAnswer": "허준",
-      "options": ["허준", "장영실", "최무선", "이순신"],
+      "options": [
+        "허준",
+        "장영실",
+        "최무선",
+        "이순신"
+      ],
       "category": "person",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -1002,7 +1387,12 @@
       "id": "q078",
       "question": "한국의 대표적인 발명가는?",
       "correctAnswer": "최무선",
-      "options": null,
+      "options": [
+        "최무선",
+        "장영실",
+        "허준",
+        "이순신"
+      ],
       "category": "person",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -1014,7 +1404,12 @@
       "id": "q079",
       "question": "한국의 대표적인 장군은?",
       "correctAnswer": "이순신",
-      "options": ["이순신", "을지문덕", "연개소문", "강감찬"],
+      "options": [
+        "이순신",
+        "을지문덕",
+        "연개소문",
+        "강감찬"
+      ],
       "category": "person",
       "difficulty": "easy",
       "type": "multipleChoice",
@@ -1026,7 +1421,12 @@
       "id": "q080",
       "question": "한국의 대표적인 교육자는?",
       "correctAnswer": "퇴계 이황",
-      "options": ["퇴계 이황", "율곡 이이", "다산 정약용", "원효대사"],
+      "options": [
+        "퇴계 이황",
+        "율곡 이이",
+        "다산 정약용",
+        "원효대사"
+      ],
       "category": "person",
       "difficulty": "easy",
       "type": "multipleChoice",

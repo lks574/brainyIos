@@ -138,6 +138,13 @@ struct QuizPlayReducer {
         state.isLoading = true
         state.errorMessage = nil
         
+        // 빈 stageId인 경우 에러 처리
+        guard !state.stageId.isEmpty else {
+          state.isLoading = false
+          state.errorMessage = "해당 카테고리의 스테이지가 준비 중입니다."
+          return .none
+        }
+        
         return .run { [stageId = state.stageId] send in
           do {
             // 스테이지별 문제 로드
@@ -177,9 +184,8 @@ struct QuizPlayReducer {
     switch question.type {
     case .multipleChoice:
       guard let selectedIndex = selectedIndex,
-            let options = question.options,
-            selectedIndex < options.count else { return false }
-      return options[selectedIndex] == question.correctAnswer
+            selectedIndex < question.options.count else { return false }
+      return question.options[selectedIndex] == question.correctAnswer
 
     case .voice, .ai:
       let userAnswer = shortAnswer.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()

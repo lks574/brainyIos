@@ -193,32 +193,30 @@ extension QuizPlayPage {
 
   private func multipleChoiceView(question: QuizQuestionDTO) -> some View {
     VStack(spacing: 12) {
-      if let options = question.options {
-        ForEach(Array(options.enumerated()), id: \.offset) { index, option in
-          BrainyQuizCard(
-            isSelected: store.selectedOptionIndex == index,
-            onTap: {
-              store.send(.selectOption(index))
-            }
-          ) {
-            HStack {
-              // Option letter (A, B, C, D)
-              Text(String(Character(UnicodeScalar(65 + index)!)))
-                .font(.brainyBodyMedium)
-                .fontWeight(.semibold)
-                .foregroundColor(.brainyPrimary)
-                .frame(width: 24, height: 24)
-                .background(Color.brainyPrimary.opacity(0.1))
-                .cornerRadius(12)
+      ForEach(Array(question.options.enumerated()), id: \.offset) { index, option in
+        BrainyQuizCard(
+          isSelected: store.selectedOptionIndex == index,
+          onTap: {
+            store.send(.selectOption(index))
+          }
+        ) {
+          HStack {
+            // Option letter (A, B, C, D)
+            Text(String(Character(UnicodeScalar(65 + index)!)))
+              .font(.brainyBodyMedium)
+              .fontWeight(.semibold)
+              .foregroundColor(.brainyPrimary)
+              .frame(width: 24, height: 24)
+              .background(Color.brainyPrimary.opacity(0.1))
+              .cornerRadius(12)
 
-              Text(option)
-                .font(.brainyBodyLarge)
-                .foregroundColor(.brainyText)
-                .lineLimit(nil)
-                .fixedSize(horizontal: false, vertical: true)
+            Text(option)
+              .font(.brainyBodyLarge)
+              .foregroundColor(.brainyText)
+              .lineLimit(nil)
+              .fixedSize(horizontal: false, vertical: true)
 
-              Spacer()
-            }
+            Spacer()
           }
         }
       }

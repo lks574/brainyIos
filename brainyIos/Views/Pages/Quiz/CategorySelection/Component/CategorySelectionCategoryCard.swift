@@ -7,7 +7,7 @@ struct CategorySelectionCategoryCard: View {
   let action: () -> Void
   
   var body: some View {
-    Button(action: action) {
+    Button(action: isEnabled ? action : {}) {
       VStack(spacing: 8) {
         Text(categoryIcon)
           .font(.system(size: 28))
@@ -80,8 +80,10 @@ struct CategorySelectionCategoryCard: View {
       )
       .scaleEffect(isSelected ? 1.05 : 1.0)
       .animation(.easeInOut(duration: 0.2), value: isSelected)
+      .opacity(isEnabled ? 1.0 : 0.6)
     }
     .buttonStyle(PlainButtonStyle())
+    .disabled(!isEnabled)
   }
   
   private var categoryIcon: String {
@@ -112,12 +114,25 @@ struct CategorySelectionCategoryCard: View {
     }
   }
   
+  private var isEnabled: Bool {
+    if let progress = progress {
+      return progress.totalStages > 0
+    }
+    return true
+  }
+  
   private var titleColor: Color {
-    isSelected ? .brainyPrimary : .brainyText
+    if !isEnabled {
+      return .brainyTextSecondary
+    }
+    return isSelected ? .brainyPrimary : .brainyText
   }
   
   private var backgroundColor: Color {
-    isSelected ? Color.brainyPrimary.opacity(0.05) : .brainyCardBackground
+    if !isEnabled {
+      return .brainyCardBackground.opacity(0.5)
+    }
+    return isSelected ? Color.brainyPrimary.opacity(0.05) : .brainyCardBackground
   }
   
   private var borderColor: Color {

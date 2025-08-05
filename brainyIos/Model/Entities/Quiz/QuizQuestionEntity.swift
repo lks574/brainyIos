@@ -6,7 +6,7 @@ final class QuizQuestionEntity {
   @Attribute(.unique) var id: String
   var question: String
   var correctAnswer: String
-  var options: [String]? // 객관식인 경우
+  var options: [String]
   var category: String
   var difficulty: String
   var type: String
@@ -17,7 +17,7 @@ final class QuizQuestionEntity {
   // 관계
   @Relationship var stage: QuizStageEntity?
   
-  init(id: String, question: String, correctAnswer: String, category: QuizCategory, difficulty: QuizDifficulty, type: QuizType, options: [String]? = nil, audioURL: String? = nil, stageId: String? = nil, orderInStage: Int? = nil) {
+  init(id: String, question: String, correctAnswer: String, category: QuizCategory, difficulty: QuizDifficulty, type: QuizType, options: [String], audioURL: String? = nil, stageId: String? = nil, orderInStage: Int? = nil) {
     self.id = id
     self.question = question
     self.correctAnswer = correctAnswer

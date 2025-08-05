@@ -4,7 +4,7 @@ struct CreateQuizQuestionRequest: Codable, Sendable, Equatable {
   let id: String
   let question: String
   let correctAnswer: String
-  let options: [String]?
+  let options: [String]
   let category: QuizCategory
   let difficulty: QuizDifficulty
   let type: QuizType
@@ -19,7 +19,7 @@ struct CreateQuizQuestionRequest: Codable, Sendable, Equatable {
     category: QuizCategory,
     difficulty: QuizDifficulty,
     type: QuizType,
-    options: [String]? = nil,
+    options: [String],
     audioURL: String? = nil,
     stageId: String? = nil,
     orderInStage: Int? = nil

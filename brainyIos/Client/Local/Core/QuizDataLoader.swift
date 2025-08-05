@@ -67,7 +67,7 @@ private struct QuizQuestionResponse: Codable {
   let id: String
   let question: String
   let correctAnswer: String
-  let options: [String]?
+  let options: [String]
   let category: String
   let difficulty: String
   let type: String

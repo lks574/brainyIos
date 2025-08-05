@@ -4,7 +4,7 @@ struct QuizQuestionDTO: Codable, Sendable, Equatable, Identifiable {
   let id: String
   let question: String
   let correctAnswer: String
-  let options: [String]?
+  let options: [String]
   let category: QuizCategory
   let difficulty: QuizDifficulty
   let type: QuizType
