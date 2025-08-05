@@ -202,8 +202,7 @@ struct QuizPlayReducer {
       case .stageCompleted(let result):
         // 스테이지 완료 후 결과 페이지로 이동
         return .run { _ in
-          // TODO: 결과 페이지로 네비게이션
-          await navigation.goToBack()
+          await navigation.goToQuizResult(result)
         }
       }
     }

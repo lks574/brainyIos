@@ -7,7 +7,7 @@ struct NavigationClient {
   var goToProfile: @Sendable () async -> Void
   var goToHistoryList: @Sendable () async -> Void
   var goToQuizPlay: @Sendable (QuizType, String, QuizCategory) async -> Void
-  var goToQuizResult: @Sendable () async -> Void
+  var goToQuizResult: @Sendable (QuizStageResultDTO) async -> Void
   var goToBack: @Sendable () async -> Void
 }
 
@@ -18,7 +18,7 @@ extension NavigationClient: DependencyKey {
     goToProfile: { },
     goToHistoryList: { },
     goToQuizPlay: { _, _, _ in },
-    goToQuizResult: { },
+    goToQuizResult: { _ in },
     goToBack: { }
   )
 
@@ -28,7 +28,7 @@ extension NavigationClient: DependencyKey {
     goToProfile: { },
     goToHistoryList: { },
     goToQuizPlay: { _, _, _ in },
-    goToQuizResult: { },
+    goToQuizResult: { _ in },
     goToBack: { }
   )
 }
