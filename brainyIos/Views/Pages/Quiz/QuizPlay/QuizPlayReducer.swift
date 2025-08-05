@@ -59,6 +59,7 @@ struct QuizPlayReducer {
   enum Action: BindableAction, Sendable {
     case binding(BindingAction<State>)
     case goToBack
+    case goToHistory
 
     case startStage
     case submitAnswer
@@ -83,6 +84,11 @@ struct QuizPlayReducer {
       case .goToBack:
         return .run { _ in
           await navigation.goToBack()
+        }
+        
+      case .goToHistory:
+        return .run { _ in
+          await navigation.goToHistoryList()
         }
 
       case .startStage:

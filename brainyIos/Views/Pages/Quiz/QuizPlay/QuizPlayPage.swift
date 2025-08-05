@@ -257,15 +257,26 @@ extension QuizPlayPage {
 
         Spacer()
 
-        // Timer
-        HStack(spacing: 4) {
-          Image(systemName: "clock")
-            .font(.system(size: 14))
-            .foregroundColor(timerColor)
+        HStack(spacing: 12) {
+          // History button
+          Button(action: {
+            store.send(.goToHistory)
+          }) {
+            Image(systemName: "clock.arrow.circlepath")
+              .font(.system(size: 16, weight: .medium))
+              .foregroundColor(.brainyPrimary)
+          }
+          
+          // Timer
+          HStack(spacing: 4) {
+            Image(systemName: "clock")
+              .font(.system(size: 14))
+              .foregroundColor(timerColor)
 
-          Text(formatTime(store.timeRemaining))
-            .font(.brainyBodyMedium)
-            .foregroundColor(timerColor)
+            Text(formatTime(store.timeRemaining))
+              .font(.brainyBodyMedium)
+              .foregroundColor(timerColor)
+          }
         }
       }
       .padding(.horizontal, 24)
