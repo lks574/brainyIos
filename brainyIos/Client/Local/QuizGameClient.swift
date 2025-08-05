@@ -17,10 +17,31 @@ struct QuizGameClient {
   var getSessionProgress: @Sendable (String) async throws -> GameProgress
 }
 
+// MARK: - Session Manager Actor
+actor GameSessionManager {
+  private var activeSessions: [String: QuizGameSession] = [:]
+  
+  func addSession(_ session: QuizGameSession) {
+    activeSessions[session.id] = session
+  }
+  
+  func getSession(_ sessionId: String) -> QuizGameSession? {
+    return activeSessions[sessionId]
+  }
+  
+  func updateSession(_ session: QuizGameSession) {
+    activeSessions[session.id] = session
+  }
+  
+  func removeSession(_ sessionId: String) {
+    activeSessions.removeValue(forKey: sessionId)
+  }
+}
+
 extension QuizGameClient: DependencyKey {
   static let liveValue: QuizGameClient = {
     let quizClient = QuizClient.liveValue
-    var activeSessions: [String: QuizGameSession] = [:]
+    let sessionManager = GameSessionManager()
     
     return QuizGameClient(
       startStage: { userId, stageId in
@@ -48,12 +69,12 @@ extension QuizGameClient: DependencyKey {
           startedAt: Date()
         )
         
-        activeSessions[session.id] = session
+        await sessionManager.addSession(session)
         return session
       },
       
       submitAnswer: { sessionId, questionId, userAnswer, isCorrect, timeSpent in
-        guard var session = activeSessions[sessionId] else {
+        guard var session = await sessionManager.getSession(sessionId) else {
           throw QuizGameError.sessionNotFound
         }
         
@@ -65,13 +86,13 @@ extension QuizGameClient: DependencyKey {
         )
         
         session.submitAnswer(result)
-        activeSessions[sessionId] = session
+        await sessionManager.updateSession(session)
         
         return result
       },
       
       completeStage: { sessionId in
-        guard let session = activeSessions[sessionId] else {
+        guard let session = await sessionManager.getSession(sessionId) else {
           throw QuizGameError.sessionNotFound
         }
         
@@ -86,44 +107,44 @@ extension QuizGameClient: DependencyKey {
         )
         
         // Remove session after completion
-        activeSessions.removeValue(forKey: sessionId)
+        await sessionManager.removeSession(sessionId)
         
         return stageResult
       },
       
       pauseGame: { sessionId in
-        guard var session = activeSessions[sessionId] else {
+        guard var session = await sessionManager.getSession(sessionId) else {
           throw QuizGameError.sessionNotFound
         }
         session.pause()
-        activeSessions[sessionId] = session
+        await sessionManager.updateSession(session)
       },
       
       resumeGame: { sessionId in
-        guard var session = activeSessions[sessionId] else {
+        guard var session = await sessionManager.getSession(sessionId) else {
           throw QuizGameError.sessionNotFound
         }
         session.resume()
-        activeSessions[sessionId] = session
+        await sessionManager.updateSession(session)
       },
       
       quitGame: { sessionId in
-        activeSessions.removeValue(forKey: sessionId)
+        await sessionManager.removeSession(sessionId)
       },
       
       getCurrentSession: { sessionId in
-        return activeSessions[sessionId]
+        return await sessionManager.getSession(sessionId)
       },
       
       getNextQuestion: { sessionId in
-        guard let session = activeSessions[sessionId] else {
+        guard let session = await sessionManager.getSession(sessionId) else {
           throw QuizGameError.sessionNotFound
         }
         return session.nextQuestion
       },
       
       getSessionProgress: { sessionId in
-        guard let session = activeSessions[sessionId] else {
+        guard let session = await sessionManager.getSession(sessionId) else {
           throw QuizGameError.sessionNotFound
         }
         return session.progress
