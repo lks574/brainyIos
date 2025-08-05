@@ -21,6 +21,8 @@ struct QuizPlayReducer {
     var timeRemaining: Int = 0
     var progress: Float = 0
     var score: Int = 0
+    var userAnswers: [String] = [] // 사용자 답안 기록
+    var startTime: Date = Date()   // 게임 시작 시간
 
     var isLoading: Bool = false
     var errorMessage: String?
@@ -84,11 +86,18 @@ struct QuizPlayReducer {
         }
 
       case .startStage:
+        state.startTime = Date() // 게임 시작 시간 기록
         return .send(.getStageQuestions)
 
       case .submitAnswer:
         // 답변이 있는지 확인
         guard state.hasAnswered else { return .none }
+        
+        // 사용자 답안 기록
+        let userAnswer = getUserAnswer(selectedIndex: state.selectedOptionIndex, 
+                                     shortAnswer: state.shortAnswerText, 
+                                     question: state.currentQuestion)
+        state.userAnswers.append(userAnswer)
         
         // 정답 체크 및 점수 업데이트
         if let currentQuestion = state.currentQuestion {
@@ -120,10 +129,24 @@ struct QuizPlayReducer {
         
       case .completeStage:
         // 스테이지 결과 저장 로직
-        return .run { [stageId = state.stageId, score = state.score] send in
-          // TODO: 스테이지 결과 저장 및 사용자 통계 업데이트
-          // let result = QuizStageResultEntity(...)
-          // await send(.stageCompleted(result))
+        return .run { [state] send in
+          do {
+            let userId = getCurrentUserId()
+            let totalTime = Date().timeIntervalSince(state.startTime)
+            
+            let result = try await quizClient.createStageResult(
+              userId,
+              state.stageId,
+              state.score,
+              totalTime
+            )
+            
+            await send(.stageCompleted(result))
+          } catch {
+            // 에러 처리
+            print("Failed to save stage result: \(error)")
+            await send(.stageQuestionsLoadFailed("결과 저장에 실패했습니다."))
+          }
         }
 
       case .changeShortAnswerText(let shortAnswerText):
@@ -160,6 +183,9 @@ struct QuizPlayReducer {
         state.quizQuestions = questions
         state.progress = 0.0
         state.score = 0
+        state.userAnswers = []
+        state.currentQuestionIndex = 0
+        state.isLastQuestion = questions.count == 1
         return .none
         
       case .stageQuestionsLoadFailed(let errorMessage):
@@ -178,6 +204,26 @@ struct QuizPlayReducer {
   }
 
   // MARK: - Helper Functions
+
+  /// 현재 사용자 ID를 가져옵니다.
+  private func getCurrentUserId() -> String {
+    return UserDefaults.standard.string(forKey: "current_user_id") ?? "default_user"
+  }
+
+  /// 사용자 답안을 문자열로 변환합니다.
+  private func getUserAnswer(selectedIndex: Int?, shortAnswer: String, question: QuizQuestionDTO?) -> String {
+    guard let question = question else { return "" }
+    
+    switch question.type {
+    case .multipleChoice:
+      guard let selectedIndex = selectedIndex,
+            selectedIndex < question.options.count else { return "" }
+      return question.options[selectedIndex]
+
+    case .voice, .ai:
+      return shortAnswer.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+  }
 
   /// 답변 체크 함수
   private func checkAnswer(question: QuizQuestionDTO, selectedIndex: Int?, shortAnswer: String) -> Bool {
