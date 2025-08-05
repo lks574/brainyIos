@@ -65,6 +65,15 @@ struct AppFeature {
         return .none
 
       case let .goToQuizResult(result):
+        // quizPlay 화면이 네비게이션 스택에 있다면 제거
+        if let lastIndex = state.path.ids.lastIndex(where: { id in
+          if case .quizPlay = state.path[id: id] {
+            return true
+          }
+          return false
+        }) {
+          state.path.remove(at: lastIndex)
+        }
         state.path.append(.quizResult(QuizResultReducer.State(stageResult: result)))
         return .none
 

@@ -52,7 +52,6 @@ struct QuizResultReducer {
 
   enum Action: BindableAction, Sendable {
     case binding(BindingAction<State>)
-    case goToBack
     case goToCategorySelection(QuizType)
     case retryStage
     case goToHistory
@@ -65,11 +64,6 @@ struct QuizResultReducer {
       switch action {
       case .binding:
         return .none
-        
-      case .goToBack:
-        return .run { _ in
-          await navigation.goToBack()
-        }
         
       case let .goToCategorySelection(quizType):
         return .run { _ in

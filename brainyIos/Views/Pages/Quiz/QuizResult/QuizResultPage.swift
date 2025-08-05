@@ -41,7 +41,7 @@ extension QuizResultPage {
         Spacer()
         
         Button(action: {
-          store.send(.goToBack)
+          store.send(.goToCategorySelection(.multipleChoice))
         }) {
           Image(systemName: "xmark")
             .font(.system(size: 18, weight: .medium))
